@@ -1,0 +1,2087 @@
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartGuruji – FLN Maths Practice Sheet Generator 2026-27 (Classes 4 to 10)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 12px;
+      background: #e2e8f0;
+      font-family: 'Noto Sans Devanagari', 'Mukta', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    /* Strictly scoped to #sgmathflnps_app */
+    #sgmathflnps_app {
+      font-family: 'Noto Sans Devanagari', 'Mukta', 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: #1e293b;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 16px;
+      padding: 18px;
+      margin: 10px auto;
+      max-width: 1100px;
+      box-sizing: border-box;
+    }
+
+    #sgmathflnps_app *,
+    #sgmathflnps_app *::before,
+    #sgmathflnps_app *::after {
+      box-sizing: border-box;
+    }
+
+    #sgmathflnps_app .sgmathflnps_hidden {
+      display: none !important;
+    }
+
+    #sgmathflnps_app .sgmathflnps_header {
+      background: linear-gradient(135deg, #1e40af 0%, #0d9488 100%);
+      color: #ffffff;
+      padding: 22px 18px;
+      border-radius: 14px;
+      text-align: center;
+      margin-bottom: 20px;
+      box-shadow: 0 6px 18px rgba(30, 64, 175, 0.18);
+    }
+
+    #sgmathflnps_app .sgmathflnps_badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    #sgmathflnps_app .sgmathflnps_title {
+      margin: 0 0 6px 0;
+      font-size: 1.8rem;
+      line-height: 1.3;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    #sgmathflnps_app .sgmathflnps_subtitle {
+      margin: 0;
+      font-size: 1.25rem;
+      color: #e0f2fe;
+      font-weight: 600;
+    }
+
+    #sgmathflnps_app .sgmathflnps_panel {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 22px;
+      box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+    }
+
+    #sgmathflnps_app .sgmathflnps_panel_head {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #eff6ff;
+    }
+
+    #sgmathflnps_app .sgmathflnps_panel_title {
+      margin: 0;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    #sgmathflnps_app .sgmathflnps_guide_box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-left: 5px solid #2563eb;
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 18px;
+      color: #1e3a8a;
+    }
+
+    #sgmathflnps_app .sgmathflnps_guide_head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 1.25rem;
+    }
+
+    #sgmathflnps_app .sgmathflnps_close_btn {
+      background: #dbeafe;
+      color: #1e40af;
+      border: none;
+      border-radius: 8px;
+      padding: 4px 12px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    #sgmathflnps_app .sgmathflnps_guide_list {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    #sgmathflnps_app .sgmathflnps_guide_list li {
+      margin-bottom: 7px;
+      font-size: 1.2rem;
+    }
+
+    #sgmathflnps_app .sgmathflnps_grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    @media (min-width: 768px) {
+      #sgmathflnps_app .sgmathflnps_grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      #sgmathflnps_app .sgmathflnps_grid_2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    #sgmathflnps_app .sgmathflnps_field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    #sgmathflnps_app .sgmathflnps_label {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    #sgmathflnps_app .sgmathflnps_input {
+      width: 100%;
+      padding: 10px 12px;
+      font-size: 1.2rem;
+      font-family: inherit;
+      color: #0f172a;
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    #sgmathflnps_app .sgmathflnps_input:focus {
+      border-color: #2563eb;
+      background: #ffffff;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    #sgmathflnps_app .sgmathflnps_readonly {
+      background: #eef2ff;
+      color: #1e40af;
+      font-weight: 800;
+      cursor: not-allowed;
+    }
+
+    #sgmathflnps_app .sgmathflnps_actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    #sgmathflnps_app .sgmathflnps_btn {
+      padding: 11px 16px;
+      font-size: 1.2rem;
+      font-family: inherit;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      color: #ffffff;
+      flex: 1 1 auto;
+      min-width: 185px;
+      transition: transform 0.12s ease, opacity 0.2s ease;
+    }
+
+    #sgmathflnps_app .sgmathflnps_btn:hover:not(:disabled) {
+      transform: translateY(-1px);
+    }
+
+    #sgmathflnps_app .sgmathflnps_btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    #sgmathflnps_app .sgmathflnps_btn_small {
+      min-width: auto;
+      flex: 0 0 auto;
+      padding: 8px 14px;
+    }
+
+    #sgmathflnps_app .sgmathflnps_btn_primary { background: #2563eb; }
+    #sgmathflnps_app .sgmathflnps_btn_purple { background: #7c3aed; }
+    #sgmathflnps_app .sgmathflnps_btn_success { background: #059669; }
+    #sgmathflnps_app .sgmathflnps_btn_amber { background: #d97706; }
+    #sgmathflnps_app .sgmathflnps_btn_teal { background: #0f766e; }
+    #sgmathflnps_app .sgmathflnps_btn_danger { background: #dc2626; }
+    #sgmathflnps_app .sgmathflnps_btn_info {
+      background: #0284c7;
+      flex: 0 0 auto;
+      min-width: auto;
+      padding: 9px 15px;
+    }
+
+    #sgmathflnps_app .sgmathflnps_status {
+      margin-top: 12px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #047857;
+      min-height: 24px;
+    }
+
+    /* Preview & Key Bars */
+    #sgmathflnps_app .sgmathflnps_preview_bar,
+    #sgmathflnps_app .sgmathflnps_key_bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 12px 16px;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      font-size: 1.2rem;
+    }
+
+    #sgmathflnps_app .sgmathflnps_key_bar {
+      background: #134e4a;
+    }
+
+    #sgmathflnps_app .sgmathflnps_key_bar_btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    #sgmathflnps_app .sgmathflnps_preview_tip {
+      color: #fde68a;
+    }
+
+    /* Worksheet Card */
+    #sgmathflnps_app .sgmathflnps_sheet {
+      position: relative;
+      background: #ffffff;
+      border: 2px solid #1e293b;
+      border-radius: 10px;
+      padding: 24px 22px;
+      margin-bottom: 28px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.08);
+      color: #111827;
+    }
+
+    #sgmathflnps_app .sgmathflnps_watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-32deg);
+      font-size: 5rem;
+      font-weight: 900;
+      color: rgba(100, 116, 139, 0.065);
+      pointer-events: none;
+      user-select: none;
+      white-space: nowrap;
+      z-index: 0;
+      letter-spacing: 4px;
+    }
+
+    #sgmathflnps_app .sgmathflnps_sheet_inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    #sgmathflnps_app .sgmathflnps_sheet_top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2.5px solid #0f172a;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+      gap: 8px;
+    }
+
+    #sgmathflnps_app .sgmathflnps_brand_left {
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #1e40af;
+    }
+
+    #sgmathflnps_app .sgmathflnps_sheet_num {
+      font-size: 1.2rem;
+      font-weight: 700;
+      background: #f1f5f9;
+      border: 1.5px solid #475569;
+      padding: 3px 12px;
+      border-radius: 6px;
+    }
+
+    #sgmathflnps_app .sgmathflnps_meta_table,
+    #sgmathflnps_app .sgmathflnps_table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 12px 0;
+      font-size: 1.2rem;
+    }
+
+    #sgmathflnps_app .sgmathflnps_meta_table td,
+    #sgmathflnps_app .sgmathflnps_table th,
+    #sgmathflnps_app .sgmathflnps_table td {
+      border: 1.2px solid #334155;
+      padding: 7px 10px;
+      text-align: left;
+    }
+
+    #sgmathflnps_app .sgmathflnps_table th {
+      background: #f1f5f9;
+      font-weight: 800;
+    }
+
+    #sgmathflnps_app .sgmathflnps_lo_banner {
+      background: #f8fafc;
+      border: 1.5px solid #334155;
+      border-radius: 6px;
+      padding: 9px 13px;
+      margin-bottom: 12px;
+    }
+
+    #sgmathflnps_app .sgmathflnps_instructions {
+      background: #fefce8;
+      border: 1.2px dashed #ca8a04;
+      border-radius: 6px;
+      padding: 9px 13px;
+      margin-bottom: 16px;
+    }
+
+    #sgmathflnps_app .sgmathflnps_act_card {
+      border: 1.2px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 15px;
+      background: rgba(255, 255, 255, 0.94);
+    }
+
+    #sgmathflnps_app .sgmathflnps_act_title {
+      margin: 0 0 10px 0;
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    #sgmathflnps_app .sgmathflnps_lo_tag {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #7dd3fc;
+      border-radius: 6px;
+      padding: 1px 8px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-right: 8px;
+    }
+
+    #sgmathflnps_app .sgmathflnps_vmath_grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin: 10px 0;
+    }
+
+    #sgmathflnps_app .sgmathflnps_vmath {
+      display: inline-block;
+      min-width: 145px;
+      border: 1.2px solid #64748b;
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-family: 'Courier New', monospace;
+      font-size: 1.35rem;
+      font-weight: 700;
+      text-align: right;
+      background: #ffffff;
+    }
+
+    #sgmathflnps_app .sgmathflnps_vmath_line {
+      border-top: 2px solid #111827;
+      margin-top: 6px;
+      padding-top: 28px;
+    }
+
+    #sgmathflnps_app .sgmathflnps_wp_steps {
+      background: #f8fafc;
+      border: 1px dashed #64748b;
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin-top: 10px;
+    }
+
+    #sgmathflnps_app .sgmathflnps_wp_row {
+      margin: 7px 0;
+    }
+
+    #sgmathflnps_app .sgmathflnps_workbox {
+      border: 1.2px solid #475569;
+      border-radius: 6px;
+      min-height: 82px;
+      margin: 6px 0;
+      background: #ffffff;
+    }
+
+    #sgmathflnps_app .sgmathflnps_line {
+      border-bottom: 1.4px dotted #475569;
+      height: 34px;
+      width: 100%;
+    }
+
+    #sgmathflnps_app .sgmathflnps_chip_row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 8px 0;
+    }
+
+    #sgmathflnps_app .sgmathflnps_chip {
+      display: inline-block;
+      border: 1.5px solid #1e293b;
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-weight: 800;
+      background: #ffffff;
+    }
+
+    #sgmathflnps_app .sgmathflnps_obs_box {
+      border: 2px solid #1e293b;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-top: 20px;
+      background: #f8fafc;
+    }
+
+    #sgmathflnps_app .sgmathflnps_obs_title {
+      margin: 0 0 10px 0;
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    #sgmathflnps_app .sgmathflnps_key_sheet {
+      background: #ffffff;
+      border: 2px solid #0f766e;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    #sgmathflnps_app .sgmathflnps_key_item {
+      border-bottom: 1px dashed #cbd5e1;
+      padding: 8px 0;
+    }
+
+    #sgmathflnps_app .sgmathflnps_key_item:last-child {
+      border-bottom: none;
+    }
+
+    #sgmathflnps_app .sgmathflnps_sheet_footer {
+      margin-top: 16px;
+      padding-top: 8px;
+      border-top: 1px solid #94a3b8;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: #475569;
+    }
+
+    #sgmathflnps_app .sgmathflnps_footer {
+      text-align: center;
+      padding: 14px 8px 4px 8px;
+      color: #475569;
+      border-top: 1px solid #cbd5e1;
+    }
+  </style>
+
+
+
+<!-- SmartGuruji – FLN Maths LO-Based Practice Sheet Generator 2026-27 (Classes 4 to 10) -->
+<div id="sgmathflnps_app" class="sgmathflnps_wrapper">
+  <!-- Header -->
+  <header class="sgmathflnps_header">
+    <div class="sgmathflnps_badge">FLN 2026-27 • Mathematics Remedial Practice Tool</div>
+    <h1 class="sgmathflnps_title">SmartGuruji – FLN Maths Practice Sheet Generator 2026-27</h1>
+    <p class="sgmathflnps_subtitle">इयत्ता 4 ते 10 | LO-1 ते LO-4 | गणित विषय</p>
+  </header>
+
+  <!-- Control Panel -->
+  <section class="sgmathflnps_panel" aria-label="सरावपत्रिका निवड पर्याय">
+    <div class="sgmathflnps_panel_head">
+      <h2 class="sgmathflnps_panel_title">सरावपत्रिका तयार करण्यासाठी पर्याय निवडा</h2>
+      <button type="button" id="sgmathflnps_btn_guide" class="sgmathflnps_btn sgmathflnps_btn_info">
+        Show Teacher Instructions
+      </button>
+    </div>
+
+    <!-- Teacher Instructions Box -->
+    <div id="sgmathflnps_guide_box" class="sgmathflnps_guide_box sgmathflnps_hidden" role="region" aria-label="शिक्षक मार्गदर्शक सूचना">
+      <div class="sgmathflnps_guide_head">
+        <strong>शिक्षकांसाठी मार्गदर्शक सूचना (FLN गणित उपचारात्मक सराव 2026-27)</strong>
+        <button type="button" id="sgmathflnps_close_guide" class="sgmathflnps_close_btn" aria-label="बंद करा">✕</button>
+      </div>
+      <ul class="sgmathflnps_guide_list">
+        <li><strong>इयत्तेनुसार संख्यांची मर्यादा:</strong> इयत्ता 4 थी व 5 वीसाठी काटेकोरपणे <strong>3-अंकी (999 पर्यंत)</strong> आणि इयत्ता 6 वी ते 10 वीसाठी <strong>4-अंकी (9999 पर्यंत)</strong> संख्यांचा वापर आपोआप केला जातो.</li>
+        <li><strong>अध्ययन स्तर प्राधान्य:</strong> इयत्ता 8 वीतील विद्यार्थी प्रारंभिक स्तरावर असल्यास <em>प्रारंभिक स्तर</em> निवडा; त्याला सोप्या पण त्याच्या इयत्तेच्या संख्यामर्यादेतील कृती मिळतील.</li>
+        <li><strong>सरावपत्रिका प्रकार:</strong> एकाच LO चा सराव, सर्व LO-1 ते LO-4 एकत्रित, ठराविक गणिती कौशल्य (उदा. फक्त भागाकार किंवा फक्त वेळ) किंवा मिश्र सरावपत्रिका तयार करता येते.</li>
+        <li><strong>स्वतंत्र उत्तरसूची (Teacher Answer Key):</strong> विद्यार्थ्यांच्या सरावपत्रिकेत उत्तरे छापली जात नाहीत. शिक्षकांसाठी <em>Teacher Answer Key</em> बटणावर अचूक गणिती मांडणीसह स्वतंत्र उत्तरसूची उपलब्ध आहे.</li>
+        <li><strong>छपाई आणि Save as PDF:</strong> <em>Print Student Worksheet</em> किंवा <em>Save as PDF</em> क्लिक केल्यावर फक्त स्वच्छ A4 सरावपत्रिकाच प्रिंट होते. PDF जतन करण्यासाठी Print विंडोमध्ये <strong>Save as PDF</strong> निवडा.</li>
+      </ul>
+    </div>
+
+    <form id="sgmathflnps_form" class="sgmathflnps_form" onsubmit="return false;">
+      <!-- Row 1 -->
+      <div class="sgmathflnps_grid">
+        <div class="sgmathflnps_field">
+          <label for="sgmathflnps_class" class="sgmathflnps_label">A. इयत्ता निवड</label>
+          <select id="sgmathflnps_class" class="sgmathflnps_input">
+            <option value="4">4 थी (3-अंकी मर्यादा: 999 पर्यंत)</option>
+            <option value="5">5 वी (3-अंकी मर्यादा: 999 पर्यंत)</option>
+            <option value="6">6 वी (4-अंकी मर्यादा: 9999 पर्यंत)</option>
+            <option value="7">7 वी (4-अंकी मर्यादा: 9999 पर्यंत)</option>
+            <option value="8" selected="">8 वी (4-अंकी मर्यादा: 9999 पर्यंत)</option>
+            <option value="9">9 वी (4-अंकी मर्यादा: 9999 पर्यंत)</option>
+            <option value="10">10 वी (4-अंकी मर्यादा: 9999 पर्यंत)</option>
+          </select>
+        </div>
+
+        <div class="sgmathflnps_field">
+          <label for="sgmathflnps_subject" class="sgmathflnps_label">B. विषय</label>
+          <input type="text" id="sgmathflnps_subject" class="sgmathflnps_input sgmathflnps_readonly" value="गणित" readonly="">
+        </div>
+
+        <div class="sgmathflnps_field">
+          <label for="sgmathflnps_level" class="sgmathflnps_label">D. अध्ययन स्तर</label>
+          <select id="sgmathflnps_level" class="sgmathflnps_input">
+            <option value="prarambhik">प्रारंभिक स्तर</option>
+            <option value="sadhana" selected="">साधना स्तर</option>
+            <option value="pragati">प्रगती स्तर</option>
+            <option value="pravinya">प्रावीण्य स्तर</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="sgmathflnps_grid">
+        <div class="sgmathflnps_field">
+          <label for="sgmathflnps_type" class="sgmathflnps_label">E. सरावपत्रिका प्रकार</label>
+          <select id="sgmathflnps_type" class="sgmathflnps_input">
+            <option value="single_lo" selected="">एका LO वर आधारित सरावपत्रिका</option>
+            <option value="all_lo">सर्व LO-1 ते LO-4 एकत्रित सरावपत्रिका</option>
+            <option value="skill_focus">निवडक गणिती कौशल्यावर आधारित सरावपत्रिका</option>
+            <option value="mixed">मिश्र सरावपत्रिका</option>
+          </select>
+        </div>
+
+        <div class="sgmathflnps_field" id="sgmathflnps_lo_wrap">
+          <label for="sgmathflnps_lo" class="sgmathflnps_label">C. Learning Outcome निवड</label>
+          <select id="sgmathflnps_lo" class="sgmathflnps_input">
+            <option value="LO-1">LO-1: संख्या वाचन, लेखन आणि आकलन</option>
+            <option value="LO-2">LO-2: बेरीज, वजाबाकी, गुणाकार आणि भागाकार</option>
+            <option value="LO-3">LO-3: मूलभूत गणिती क्रियांवर आधारित शाब्दिक उदाहरणे</option>
+            <option value="LO-4">LO-4: दैनंदिन जीवनातील गणिताचा वापर</option>
+          </select>
+        </div>
+
+        <div class="sgmathflnps_field sgmathflnps_hidden" id="sgmathflnps_skill_wrap">
+          <label for="sgmathflnps_skill" class="sgmathflnps_label">निवडक गणिती कौशल्य निवडा</label>
+          <select id="sgmathflnps_skill" class="sgmathflnps_input">
+            <option value="numbers">संख्या वाचन, लेखन व स्थानिक किंमत (LO-1)</option>
+            <option value="add">बेरीज सराव (LO-2)</option>
+            <option value="sub">वजाबाकी सराव (LO-2)</option>
+            <option value="mul">गुणाकार सराव (LO-2)</option>
+            <option value="div">भागाकार सराव (LO-2)</option>
+            <option value="word">शाब्दिक उदाहरणे (LO-3)</option>
+            <option value="time">वेळ व घड्याळ (LO-4)</option>
+            <option value="money">पैसा व खरेदी-विक्री (LO-4)</option>
+            <option value="length">लांबी व मोजमाप (LO-4)</option>
+            <option value="data">माहिती व आलेख वाचन (LO-4)</option>
+          </select>
+        </div>
+
+        <div class="sgmathflnps_field">
+          <label for="sgmathflnps_sheet_count" class="sgmathflnps_label">F. सरावपत्रिकांची संख्या</label>
+          <select id="sgmathflnps_sheet_count" class="sgmathflnps_input">
+            <option value="1" selected="">1 सरावपत्रिका</option>
+            <option value="2">2 सरावपत्रिका</option>
+            <option value="3">3 सरावपत्रिका</option>
+            <option value="5">5 सरावपत्रिका</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="sgmathflnps_grid">
+        <div class="sgmathflnps_field">
+          <label for="sgmathflnps_act_count" class="sgmathflnps_label">G. कृतींची संख्या</label>
+          <select id="sgmathflnps_act_count" class="sgmathflnps_input">
+            <option value="10" selected="">10 कृती</option>
+            <option value="15">15 कृती</option>
+            <option value="20">20 कृती</option>
+            <option value="25">25 कृती</option>
+          </select>
+        </div>
+
+        <div class="sgmathflnps_field">
+          <label for="sgmathflnps_student" class="sgmathflnps_label">विद्यार्थ्याचे नाव (ऐच्छिक)</label>
+          <input type="text" id="sgmathflnps_student" class="sgmathflnps_input" placeholder="उदा. स्वरा पाटील">
+        </div>
+
+        <div class="sgmathflnps_field">
+          <label for="sgmathflnps_school" class="sgmathflnps_label">शाळेचे नाव (ऐच्छिक)</label>
+          <input type="text" id="sgmathflnps_school" class="sgmathflnps_input" placeholder="उदा. सरकारी मराठी उच्च प्राथमिक शाळा">
+        </div>
+      </div>
+
+      <!-- Row 4 -->
+      <div class="sgmathflnps_grid sgmathflnps_grid_2">
+        <div class="sgmathflnps_field">
+          <label for="sgmathflnps_date" class="sgmathflnps_label">दिनांक</label>
+          <input type="date" id="sgmathflnps_date" class="sgmathflnps_input">
+        </div>
+        <div class="sgmathflnps_field">
+          <label for="sgmathflnps_teacher" class="sgmathflnps_label">शिक्षकाचे नाव (ऐच्छिक)</label>
+          <input type="text" id="sgmathflnps_teacher" class="sgmathflnps_input" placeholder="उदा. श्री. कांबळे सर">
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="sgmathflnps_actions">
+        <button type="button" id="sgmathflnps_btn_generate" class="sgmathflnps_btn sgmathflnps_btn_primary">Generate Practice Sheet</button>
+        <button type="button" id="sgmathflnps_btn_another" class="sgmathflnps_btn sgmathflnps_btn_purple" disabled="">Generate Another Practice Sheet</button>
+        <button type="button" id="sgmathflnps_btn_print" class="sgmathflnps_btn sgmathflnps_btn_success" disabled="">Print Student Worksheet</button>
+        <button type="button" id="sgmathflnps_btn_pdf" class="sgmathflnps_btn sgmathflnps_btn_amber" disabled="">Save as PDF</button>
+        <button type="button" id="sgmathflnps_btn_key" class="sgmathflnps_btn sgmathflnps_btn_teal" disabled="">Teacher Answer Key</button>
+        <button type="button" id="sgmathflnps_btn_reset" class="sgmathflnps_btn sgmathflnps_btn_danger">Reset / Clear</button>
+      </div>
+
+      <div id="sgmathflnps_status" class="sgmathflnps_status" aria-live="polite"></div>
+    </form>
+  </section>
+
+  <!-- Teacher Answer Key Panel (Independent & Printable) -->
+  <section id="sgmathflnps_key_wrap" class="sgmathflnps_key_wrap sgmathflnps_hidden" aria-label="शिक्षक उत्तरसूची">
+    <div class="sgmathflnps_key_bar">
+      <strong>शिक्षकांसाठी स्वतंत्र उत्तरसूची (Teacher Answer Key)</strong>
+      <div class="sgmathflnps_key_bar_btns">
+        <button type="button" id="sgmathflnps_btn_print_key" class="sgmathflnps_btn sgmathflnps_btn_small sgmathflnps_btn_success">Print / Save Answer Key PDF</button>
+        <button type="button" id="sgmathflnps_btn_close_key" class="sgmathflnps_btn sgmathflnps_btn_small sgmathflnps_btn_danger">बंद करा</button>
+      </div>
+    </div>
+    <div id="sgmathflnps_key_container"></div>
+  </section>
+
+  <!-- Student Worksheets Preview Area -->
+  <section id="sgmathflnps_output_wrap" class="sgmathflnps_output_wrap sgmathflnps_hidden" aria-label="विद्यार्थी सरावपत्रिका">
+    <div class="sgmathflnps_preview_bar">
+      <span id="sgmathflnps_preview_info"></span>
+      <span class="sgmathflnps_preview_tip">टीप: विद्यार्थ्यांच्या सरावपत्रिकेत उत्तरे छापली जाणार नाहीत.</span>
+    </div>
+    <div id="sgmathflnps_sheets_container"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="sgmathflnps_footer">
+    Prepared for Teachers and Students | <strong>SmartGuruji</strong>
+  </footer>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------------- 1. Authentic Marathi Number-to-Words (0 to 9999) ---------------- */
+  var MR_0_99 = [
+    'शून्य','एक','दोन','तीन','चार','पाच','सहा','सात','आठ','नऊ',
+    'दहा','अकरा','बारा','तेरा','चौदा','पंधरा','सोळा','सतरा','अठरा','एकोणीस',
+    'वीस','एकवीस','बावीस','तेवीस','चोवीस','पंचवीस','सव्वीस','सत्तावीस','अठ्ठावीस','एकोणतीस',
+    'तीस','एकतीस','बत्तीस','तेहतीस','चौतीस','पस्तीस','छत्तीस','सदतीस','अडतीस','एकोणचाळीस',
+    'चाळीस','एकेचाळीस','बेचाळीस','त्रेचाळीस','चव्वेचाळीस','पंचेचाळीस','सेहेचाळीस','सत्तेचाळीस','अठ्ठेचाळीस','एकोणपन्नास',
+    'पन्नास','एकावन्न','बावन्न','त्रेपन्न','चोपन्न','पंचावन्न','छप्पन्न','सत्तावन्न','अठ्ठावन्न','एकोणसाठ',
+    'साठ','एकसष्ट','बासष्ट','त्रेसष्ट','चौसष्ट','पासष्ट','सहासष्ट','सदुसष्ट','अडुसष्ट','एकोणसत्तर',
+    'सत्तर','एकाहत्तर','बाहत्तर','त्र्याहत्तर','चौऱ्याहत्तर','पंच्याहत्तर','शहात्तर','सत्त्याहत्तर','अठ्ठ्याहत्तर','एकोणऐंशी',
+    'ऐंशी','एक्याऐंशी','ब्याऐंशी','त्र्याऐंशी','चौऱ्याऐंशी','पंच्याऐंशी','शहाऐंशी','सत्त्याऐंशी','अठ्ठ्याऐंशी','एकोणनव्वद',
+    'नव्वद','एक्याण्णव','ब्याण्णव','त्र्याण्णव','चौऱ्याण्णव','पंच्याण्णव','शहाण्णव','सत्त्याण्णव','अठ्ठ्याण्णव','नव्याण्णव'
+  ];
+
+  var MR_HUNDREDS = ['','एकशे','दोनशे','तीनशे','चारशे','पाचशे','सहाशे','सातशे','आठशे','नऊशे'];
+
+  function numToMarathiWords(n) {
+    n = Math.floor(Math.abs(n));
+    if (n < 100) return MR_0_99[n];
+    var parts = [];
+    var th = Math.floor(n / 1000);
+    var remTh = n % 1000;
+    if (th > 0) parts.push(MR_0_99[th] + ' हजार');
+    var hu = Math.floor(remTh / 100);
+    var remHu = remTh % 100;
+    if (hu > 0) parts.push(MR_HUNDREDS[hu]);
+    if (remHu > 0) parts.push(MR_0_99[remHu]);
+    return parts.join(' ');
+  }
+
+  /* ---------------- 2. Random & Formatting Helpers ---------------- */
+  function randInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  function shuffle(arr) {
+    var a = arr.slice();
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  function pick(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  function esc(str) {
+    return String(str || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  function formatDateDisplay(val) {
+    if (!val) return '_____ / _____ / 202__';
+    var p = val.split('-');
+    return p.length === 3 ? (p[2] + ' / ' + p[1] + ' / ' + p[0]) : val;
+  }
+
+  function getBounds(cls, level) {
+    var isHigh = parseInt(cls, 10) >= 6;
+    if (!isHigh) {
+      if (level === 'prarambhik') return { min: 100, max: 499, maxVal: 999, digits: 3 };
+      if (level === 'sadhana') return { min: 150, max: 799, maxVal: 999, digits: 3 };
+      return { min: 200, max: 999, maxVal: 999, digits: 3 };
+    } else {
+      if (level === 'prarambhik') return { min: 1000, max: 3999, maxVal: 9999, digits: 4 };
+      if (level === 'sadhana') return { min: 1200, max: 6999, maxVal: 9999, digits: 4 };
+      return { min: 1500, max: 9999, maxVal: 9999, digits: 4 };
+    }
+  }
+
+  function makeNoCarryAddPair(maxVal, isHigh) {
+    var digits = isHigh ? 4 : 3;
+    var a = 0, b = 0;
+    for (var i = 0; i < digits; i++) {
+      var d1 = i === 0 ? randInt(1, 5) : randInt(0, 5);
+      var d2 = i === 0 ? randInt(1, 9 - d1) : randInt(0, 9 - d1);
+      a = a * 10 + d1;
+      b = b * 10 + d2;
+    }
+    return [a, b];
+  }
+
+  function makeNoBorrowSubPair(isHigh) {
+    var digits = isHigh ? 4 : 3;
+    var a = 0, b = 0;
+    for (var i = 0; i < digits; i++) {
+      var d1 = i === 0 ? randInt(3, 9) : randInt(2, 9);
+      var d2 = i === 0 ? randInt(1, d1 - 1) : randInt(0, d1);
+      a = a * 10 + d1;
+      b = b * 10 + d2;
+    }
+    return [a, b];
+  }
+
+  function expandedForm(n) {
+    var s = String(n);
+    var res = [];
+    for (var i = 0; i < s.length; i++) {
+      var d = parseInt(s[i], 10);
+      var place = Math.pow(10, s.length - 1 - i);
+      res.push(d * place);
+    }
+    return res.join(' + ');
+  }
+
+  function verticalMathHtml(a, b, op) {
+    return (
+      '<div class="sgmathflnps_vmath">' +
+        '<div>' + a + '</div>' +
+        '<div>' + op + ' ' + b + '</div>' +
+        '<div class="sgmathflnps_vmath_line"></div>' +
+      '</div>'
+    );
+  }
+
+  function wordProblemTemplate(questionText) {
+    return (
+      '<p style="margin:0 0 8px 0;font-weight:700;">' + questionText + '</p>' +
+      '<div class="sgmathflnps_wp_steps">' +
+        '<div class="sgmathflnps_wp_row"><strong>1) दिलेली माहिती:</strong> __________________________________________________</div>' +
+        '<div class="sgmathflnps_wp_row"><strong>2) कोणती गणिती क्रिया करावी?</strong> ( + / − / × / ÷ ) : ___________</div>' +
+        '<div class="sgmathflnps_wp_row"><strong>3) गणिती मांडणी व सोडवणूक:</strong><div class="sgmathflnps_workbox"></div></div>' +
+        '<div class="sgmathflnps_wp_row"><strong>4) अंतिम उत्तर (योग्य एककासह):</strong> ______________________________________</div>' +
+        '<div class="sgmathflnps_wp_row"><strong>5) उत्तर तपासले का?</strong> [ &nbsp;&nbsp; ] होय, उत्तर योग्य आहे.</div>' +
+      '</div>'
+    );
+  }
+
+  /* ---------------- 3. Printable B&W SVG Builders for LO-4 ---------------- */
+  function svgClock(hour, min) {
+    var hAngle = ((hour % 12) + min / 60) * 30 - 90;
+    var mAngle = min * 6 - 90;
+    var hx = 50 + 24 * Math.cos(hAngle * Math.PI / 180);
+    var hy = 50 + 24 * Math.sin(hAngle * Math.PI / 180);
+    var mx = 50 + 34 * Math.cos(mAngle * Math.PI / 180);
+    var my = 50 + 34 * Math.sin(mAngle * Math.PI / 180);
+    var nums = '';
+    for (var i = 1; i <= 12; i++) {
+      var ang = (i * 30 - 90) * Math.PI / 180;
+      var nx = 50 + 39 * Math.cos(ang);
+      var ny = 50 + 39 * Math.sin(ang) + 3;
+      nums += '<text x="' + nx.toFixed(1) + '" y="' + ny.toFixed(1) + '" font-size="8" font-weight="bold" text-anchor="middle" fill="#111">' + i + '</text>';
+    }
+    return '<svg style="width:110px;height:110px;display:block;margin:4px auto;" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">' +
+      '<circle cx="50" cy="50" r="46" fill="#fff" stroke="#111" stroke-width="2.5"/>' +
+      nums +
+      '<line x1="50" y1="50" x2="' + hx.toFixed(1) + '" y2="' + hy.toFixed(1) + '" stroke="#111" stroke-width="3.2" stroke-linecap="round"/>' +
+      '<line x1="50" y1="50" x2="' + mx.toFixed(1) + '" y2="' + my.toFixed(1) + '" stroke="#111" stroke-width="2" stroke-linecap="round"/>' +
+      '<circle cx="50" cy="50" r="3" fill="#111"/>' +
+    '</svg>';
+  }
+
+  function svgNote(val) {
+    return '<svg style="width:92px;height:46px;display:inline-block;vertical-align:middle;margin:4px;" viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg">' +
+      '<rect x="2" y="2" width="96" height="46" rx="4" fill="#fff" stroke="#111" stroke-width="2"/>' +
+      '<rect x="7" y="7" width="86" height="36" rx="2" fill="none" stroke="#111" stroke-width="1" stroke-dasharray="3,2"/>' +
+      '<text x="50" y="31" font-size="16" font-weight="bold" text-anchor="middle" fill="#111">₹ ' + val + '</text>' +
+    '</svg>';
+  }
+
+  function svgCoin(val) {
+    return '<svg style="width:46px;height:46px;display:inline-block;vertical-align:middle;margin:4px;" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">' +
+      '<circle cx="25" cy="25" r="22" fill="#fff" stroke="#111" stroke-width="2"/>' +
+      '<circle cx="25" cy="25" r="18" fill="none" stroke="#111" stroke-width="1"/>' +
+      '<text x="25" y="30" font-size="13" font-weight="bold" text-anchor="middle" fill="#111">₹' + val + '</text>' +
+    '</svg>';
+  }
+
+  function svgRuler(cmVal) {
+    var ticks = '';
+    for (var i = 0; i <= 10; i++) {
+      var x = 15 + i * 26;
+      ticks += '<line x1="' + x + '" y1="45" x2="' + x + '" y2="62" stroke="#111" stroke-width="1.5"/>' +
+        '<text x="' + x + '" y="74" font-size="9" text-anchor="middle" fill="#111">' + i + '</text>';
+    }
+    var objW = cmVal * 26;
+    return '<svg style="width:100%;max-width:320px;height:88px;display:block;margin:6px auto;" viewBox="0 0 300 84" xmlns="http://www.w3.org/2000/svg">' +
+      '<rect x="15" y="14" width="' + objW + '" height="16" fill="#e2e8f0" stroke="#111" stroke-width="2"/>' +
+      '<polygon points="' + (15 + objW) + ',14 ' + (27 + objW) + ',22 ' + (15 + objW) + ',30" fill="#fff" stroke="#111" stroke-width="2"/>' +
+      '<rect x="10" y="45" width="275" height="34" fill="#fff" stroke="#111" stroke-width="1.8"/>' +
+      ticks +
+      '<text x="275" y="57" font-size="8" text-anchor="end" fill="#111">cm</text>' +
+    '</svg>';
+  }
+
+  function svgBarGraph(items) {
+    var maxV = Math.max.apply(null, items.map(function (x) { return x.v; }));
+    var step = Math.ceil(maxV / 5) * 5;
+    if (step < 10) step = 10;
+    var bars = '';
+    for (var i = 0; i < items.length; i++) {
+      var bh = Math.round((items[i].v / step) * 90);
+      var bx = 46 + i * 62;
+      var by = 110 - bh;
+      bars += '<rect x="' + bx + '" y="' + by + '" width="34" height="' + bh + '" fill="#cbd5e1" stroke="#111" stroke-width="1.8"/>' +
+        '<text x="' + (bx + 17) + '" y="' + (by - 4) + '" font-size="10" font-weight="bold" text-anchor="middle" fill="#111">' + items[i].v + '</text>' +
+        '<text x="' + (bx + 17) + '" y="126" font-size="10" font-weight="bold" text-anchor="middle" fill="#111">' + items[i].k + '</text>';
+    }
+    return '<svg style="width:100%;max-width:340px;height:145px;display:block;margin:6px auto;" viewBox="0 0 320 138" xmlns="http://www.w3.org/2000/svg">' +
+      '<line x1="34" y1="15" x2="34" y2="110" stroke="#111" stroke-width="2"/>' +
+      '<line x1="34" y1="110" x2="305" y2="110" stroke="#111" stroke-width="2"/>' +
+      bars +
+    '</svg>';
+  }
+
+  /* ---------------- 4. LO-1 Generators (16 Distinct Types) ---------------- */
+  var LO1_GENS = [
+    function (b) {
+      var n1 = randInt(b.min, b.max), n2 = randInt(b.min, b.max);
+      return {
+        lo: 'LO-1', skill: 'numbers',
+        title: 'दिलेल्या अंकातील संख्या शब्दांत लिहा.',
+        body: '<p>1) <strong>' + n1 + '</strong> = ______________________________________</p>' +
+              '<p>2) <strong>' + n2 + '</strong> = ______________________________________</p>',
+        ans: '1) ' + numToMarathiWords(n1) + ' | 2) ' + numToMarathiWords(n2)
+      };
+    },
+    function (b) {
+      var n1 = randInt(b.min, b.max), n2 = randInt(b.min, b.max);
+      return {
+        lo: 'LO-1', skill: 'numbers',
+        title: 'दिलेल्या शब्दांतील संख्या अंकात लिहा.',
+        body: '<p>1) ' + numToMarathiWords(n1) + ' = ________________</p>' +
+              '<p>2) ' + numToMarathiWords(n2) + ' = ________________</p>',
+        ans: '1) ' + n1 + ' | 2) ' + n2
+      };
+    },
+    function (b) {
+      var nums = [randInt(b.min, b.max), randInt(b.min, b.max), randInt(b.min, b.max)];
+      var words = shuffle(nums.map(function (x) { return { n: x, w: numToMarathiWords(x) }; }));
+      var rows = nums.map(function (n, idx) {
+        return '<tr><td>' + (idx + 1) + ') <strong>' + n + '</strong></td><td>' + String.fromCharCode(65 + idx) + ') ' + words[idx].w + '</td></tr>';
+      }).join('');
+      var ansMap = nums.map(function (n, idx) {
+        var matchIdx = words.findIndex(function (x) { return x.n === n; });
+        return (idx + 1) + ' → ' + String.fromCharCode(65 + matchIdx);
+      }).join(', ');
+      return {
+        lo: 'LO-1', skill: 'numbers',
+        title: 'अंक आणि शब्द यांची योग्य जोडी लावा.',
+        body: '<table class="sgmathflnps_table"><tr><th>अंक</th><th>शब्द</th></tr>' + rows + '</table>',
+        ans: ansMap
+      };
+    },
+    function (b) {
+      var n1 = randInt(b.min + 1, b.max - 1), n2 = randInt(b.min + 1, b.max - 1);
+      return {
+        lo: 'LO-1', skill: 'numbers',
+        title: 'रिकाम्या जागी लगतची मागील व पुढील योग्य संख्या लिहा.',
+        body: '<p>1) ________ , <strong>' + n1 + '</strong> , ________</p>' +
+              '<p>2) ________ , <strong>' + n2 + '</strong> , ________</p>',
+        ans: '1) ' + (n1 - 1) + ', ' + n1 + ', ' + (n1 + 1) + ' | 2) ' + (n2 - 1) + ', ' + n2 + ', ' + (n2 + 1)
+      };
+    },
+    function (b) {
+      var arr = [randInt(b.min, b.max), randInt(b.min, b.max), randInt(b.min, b.max), randInt(b.min, b.max)];
+      var sorted = arr.slice().sort(function (x, y) { return x - y; });
+      return {
+        lo: 'LO-1', skill: 'numbers',
+        title: 'खालील संख्या चढत्या क्रमाने (लहानाकडून मोठ्याकडे) लिहा.',
+        body: '<div class="sgmathflnps_chip_row">' + arr.map(function (x) { return '<span class="sgmathflnps_chip">' + x + '</span>'; }).join('') + '</div><div class="sgmathflnps_line"></div>',
+        ans: sorted.join(', ')
+      };
+    },
+    function (b) {
+      var arr = [randInt(b.min, b.max), randInt(b.min, b.max), randInt(b.min, b.max), randInt(b.min, b.max)];
+      var sorted = arr.slice().sort(function (x, y) { return y - x; });
+      return {
+        lo: 'LO-1', skill: 'numbers',
+        title: 'खालील संख्या उतरत्या क्रमाने (मोठ्याकडून लहानाकडे) लिहा.',
+        body: '<div class="sgmathflnps_chip_row">' + arr.map(function (x) { return '<span class="sgmathflnps_chip">' + x + '</span>'; }).join('') + '</div><div class="sgmathflnps_line"></div>',
+        ans: sorted.join(', ')
+      };
+    },
+    function (b) {
+      var a1 = randInt(b.min, b.max), b1 = randInt(b.min, b.max);
+      var a2 = randInt(b.min, b.max), b2 = randInt(b.min, b.max);
+      var s1 = a1 > b1 ? '>' : (a1 < b1 ? '<' : '=');
+      var s2 = a2 > b2 ? '>' : (a2 < b2 ? '<' : '=');
+      return {
+        lo: 'LO-1', skill: 'numbers',
+        title: 'लहान आणि मोठी संख्या ओळखा व योग्य चिन्ह ( < , > , = ) चौकटीत लिहा.',
+        body: '<p>1) ' + a1 + ' [ &nbsp;&nbsp;&nbsp; ] ' + b1 + ' &nbsp;&nbsp;&nbsp;&nbsp; 2) ' + a2 + ' [ &nbsp;&nbsp;&nbsp; ] ' + b2 + '</p>',
+        ans: '1) ' + a1 + ' ' + s1 + ' ' + b1 + ' | 2) ' + a2 + ' ' + s2 + ' ' + b2
+      };
+    },
+    function (b) {
+      var n1 = randInt(b.min, b.max), n2 = randInt(b.min, b.max);
+      return {
+        lo: 'LO-1', skill: 'numbers',
+        title: 'संख्या विस्तारित स्वरूपात लिहा.',
+        body: '<p>1) <strong>' + n1 + '</strong> = ____________________________________</p>' +
+              '<p>2) <strong>' + n2 + '</strong> = ____________________________________</p>',
+        ans: '1) ' + expandedForm(n1) + ' | 2) ' + expandedForm(n2)
+      };
+    },
+    function (b) {
+      var n1 = randInt(b.min, b.max);
+      var s = String(n1);
+      var cols = b.digits === 4 ? '<th>हजार</th><th>शतक</th><th>दशक</th><th>एकक</th>' : '<th>शतक</th><th>दशक</th><th>एकक</th>';
+      var blanks = b.digits === 4 ? '<td style="height:36px;"></td><td></td><td></td><td></td>' : '<td style="height:36px;"></td><td></td><td></td>';
+      return {
+        lo: 'LO-1', skill: 'numbers',
+        title: 'दिलेल्या संख्येतील एकक, दशक, शतक' + (b.digits === 4 ? ', हजार' : '') + ' स्थान ओळखा: संख्या = ' + n1,
+        body: '<table class="sgmathflnps_table"><tr>' + cols + '</tr><tr>' + blanks + '</tr></table>',
+        ans: b.digits === 4 ? ('हजार=' + s[0] + ', शतक=' + s[1] + ', दशक=' + s[2] + ', एकक=' + s[3]) : ('शतक=' + s[0] + ', दशक=' + s[1] + ', एकक=' + s[2])
+      };
+    },
+    function (b) {
+      var n = randInt(b.min, b.max);
+      var s = String(n);
+      var pos = randInt(0, s.length - 1);
+      var digit = parseInt(s[pos], 10);
+      var pv = digit * Math.pow(10, s.length - 1 - pos);
+      var underlined = s.slice(0, pos) + '<u style="font-weight:900;">' + s[pos] + '</u>' + s.slice(pos + 1);
+      return {
+        lo: 'LO-1', skill: 'numbers',
+        title: 'अधोरेखित अंकाची स्थानिक किंमत आणि दर्शनी किंमत लिहा.',
+        body: '<p>संख्या: <strong>' + underlined + '</strong></p>' +
+              '<p>स्थानिक किंमत = _______________ &nbsp;&nbsp; दर्शनी किंमत = _______________</p>',
+        ans: 'स्थानिक किंमत = ' + pv + ', दर्शनी किंमत = ' + digit
+      };
+    },
+    function (b) {
+      var digs = shuffle([1,2,3,4,5,6,7,8,9]).slice(0, b.digits);
+      var big = parseInt(digs.slice().sort(function (x, y) { return y - x; }).join(''), 10);
+      return {
+        lo: 'LO-1', skill: 'numbers',
+        title: 'दिलेल्या अंकांपासून सर्वात मोठी ' + b.digits + '-अंकी संख्या तयार करा (प्रत्येक अंक एकदाच वापरा).',
+        body: '<div class="sgmathflnps_chip_row">' + digs.map(function (d) { return '<span class="sgmathflnps_chip">' + d + '</span>'; }).join('') + '</div><p>सर्वात मोठी संख्या: ___________________</p>',
+        ans: String(big)
+      };
+    },
+    function (b) {
+      var digs = shuffle([1,2,3,4,5,6,7,8,9]).slice(0, b.digits);
+      var small = parseInt(digs.slice().sort(function (x, y) { return x - y; }).join(''), 10);
+      return {
+        lo: 'LO-1', skill: 'numbers',
+        title: 'दिलेल्या अंकांपासून सर्वात लहान ' + b.digits + '-अंकी संख्या तयार करा.',
+        body: '<div class="sgmathflnps_chip_row">' + digs.map(function (d) { return '<span class="sgmathflnps_chip">' + d + '</span>'; }).join('') + '</div><p>सर्वात लहान संख्या: ___________________</p>',
+        ans: String(small)
+      };
+    },
+    function (b) {
+      var step = pick(b.digits === 4 ? [10, 50, 100] : [5, 10, 20]);
+      var start = randInt(b.min, Math.min(b.maxVal - step * 5, b.max));
+      return {
+        lo: 'LO-1', skill: 'numbers',
+        title: 'संख्या मालिकेतील पुढील 2 संख्या लिहा.',
+        body: '<p style="font-weight:700;">' + start + ', ' + (start + step) + ', ' + (start + step * 2) + ', ________ , ________</p>',
+        ans: (start + step * 3) + ', ' + (start + step * 4) + ' (फरक +' + step + ')'
+      };
+    },
+    function (b) {
+      var step = pick([10, 25, 50]);
+      var start = randInt(b.min, Math.min(b.maxVal - step * 5, b.max));
+      return {
+        lo: 'LO-1', skill: 'numbers',
+        title: 'संख्या मालिकेतील रिकाम्या जागा भरा.',
+        body: '<p style="font-weight:700;">' + start + ', ________ , ' + (start + step * 2) + ', ________ , ' + (start + step * 4) + '</p>',
+        ans: (start + step) + ' आणि ' + (start + step * 3)
+      };
+    },
+    function (b) {
+      var n = randInt(b.min, b.max);
+      var w1 = randInt(b.min, b.max);
+      var w2 = randInt(b.min, b.max);
+      if (w1 === n) w1 = n - 1;
+      if (w2 === n) w2 = n + 1;
+      var opts = shuffle([
+        { ok: true, txt: numToMarathiWords(n) },
+        { ok: false, txt: numToMarathiWords(w1) },
+        { ok: false, txt: numToMarathiWords(w2) }
+      ]);
+      var labels = ['अ', 'ब', 'क'];
+      var correctLbl = '';
+      var optHtml = opts.map(function (o, i) {
+        if (o.ok) correctLbl = labels[i] + ') ' + o.txt;
+        return '<p style="margin:4px 0;">(' + labels[i] + ') ' + o.txt + '</p>';
+      }).join('');
+      return {
+        lo: 'LO-1', skill: 'numbers',
+        title: 'दिलेल्या संख्येचे योग्य वाचन निवडा: संख्या = ' + n,
+        body: optHtml,
+        ans: correctLbl
+      };
+    },
+    function (b) {
+      var n1 = randInt(b.min, b.max);
+      var n2 = randInt(b.min, b.max);
+      var big = Math.max(n1, n2), sm = Math.min(n1, n2);
+      return {
+        lo: 'LO-1', skill: 'numbers',
+        title: 'संख्यांमधील फरक समजून घ्या: ' + big + ' ही संख्या ' + sm + ' पेक्षा कितीने मोठी आहे?',
+        body: '<p>फरक = ' + big + ' − ' + sm + ' = ______________</p>',
+        ans: String(big - sm)
+      };
+    }
+  ];
+
+  /* ---------------- 5. LO-2 Generators (21 Distinct Types) ---------------- */
+  var LO2_GENS = [
+    function (b) {
+      var pair = makeNoCarryAddPair(b.maxVal, b.digits === 4);
+      var sum = pair[0] + pair[1];
+      return {
+        lo: 'LO-2', skill: 'add',
+        title: 'हातच्याशिवाय उभी बेरीज करा.',
+        body: '<div class="sgmathflnps_vmath_grid">' + verticalMathHtml(pair[0], pair[1], '+') + '</div>',
+        ans: pair[0] + ' + ' + pair[1] + ' = ' + sum
+      };
+    },
+    function (b) {
+      var a = randInt(b.min, Math.floor(b.maxVal * 0.6));
+      var c = randInt(Math.floor(b.min * 0.5), b.maxVal - a);
+      return {
+        lo: 'LO-2', skill: 'add',
+        title: 'हातच्याची बेरीज करा.',
+        body: '<div class="sgmathflnps_vmath_grid">' + verticalMathHtml(a, c, '+') + '</div>',
+        ans: a + ' + ' + c + ' = ' + (a + c)
+      };
+    },
+    function (b) {
+      var a = randInt(Math.floor(b.min * 0.4), Math.floor(b.maxVal * 0.3));
+      var c = randInt(Math.floor(b.min * 0.4), Math.floor(b.maxVal * 0.3));
+      var d = randInt(Math.floor(b.min * 0.4), Math.floor(b.maxVal * 0.3));
+      return {
+        lo: 'LO-2', skill: 'add',
+        title: 'तीन संख्यांची बेरीज करा.',
+        body: '<p style="font-weight:700;">' + a + ' + ' + c + ' + ' + d + ' = ____________</p><div class="sgmathflnps_workbox"></div>',
+        ans: String(a + c + d)
+      };
+    },
+    function (b) {
+      var a = randInt(b.min, Math.floor(b.maxVal * 0.55));
+      var miss = randInt(100, b.maxVal - a);
+      var tot = a + miss;
+      return {
+        lo: 'LO-2', skill: 'add',
+        title: 'रिकाम्या जागेतील योग्य संख्या शोधून बेरीज पूर्ण करा.',
+        body: '<p style="font-weight:700;">' + a + ' + [ ________ ] = ' + tot + '</p>',
+        ans: String(miss) + ' (' + tot + ' − ' + a + ')'
+      };
+    },
+    function (b) {
+      var a = randInt(b.min, Math.floor(b.maxVal * 0.5));
+      var c = randInt(100, b.maxVal - a);
+      var cols = b.digits === 4 ? '<th>हजार</th><th>शतक</th><th>दशक</th><th>एकक</th>' : '<th>शतक</th><th>दशक</th><th>एकक</th>';
+      var emptyRow = b.digits === 4 ? '<td style="height:34px;"></td><td></td><td></td><td></td>' : '<td style="height:34px;"></td><td></td><td></td>';
+      return {
+        lo: 'LO-2', skill: 'add',
+        title: 'स्थानिक तक्त्यात मांडून बेरीज करा: ' + a + ' + ' + c,
+        body: '<table class="sgmathflnps_table"><tr>' + cols + '</tr><tr>' + emptyRow + '</tr><tr>' + emptyRow + '</tr><tr>' + emptyRow + '</tr></table>',
+        ans: String(a + c)
+      };
+    },
+    function (b) {
+      var pair = makeNoBorrowSubPair(b.digits === 4);
+      return {
+        lo: 'LO-2', skill: 'sub',
+        title: 'हातचा न घेता वजाबाकी करा.',
+        body: '<div class="sgmathflnps_vmath_grid">' + verticalMathHtml(pair[0], pair[1], '−') + '</div>',
+        ans: pair[0] + ' − ' + pair[1] + ' = ' + (pair[0] - pair[1])
+      };
+    },
+    function (b) {
+      var a = randInt(Math.floor(b.maxVal * 0.5), b.maxVal);
+      var c = randInt(b.min, a - 15);
+      return {
+        lo: 'LO-2', skill: 'sub',
+        title: 'हातचा घेऊन वजाबाकी करा.',
+        body: '<div class="sgmathflnps_vmath_grid">' + verticalMathHtml(a, c, '−') + '</div>',
+        ans: a + ' − ' + c + ' = ' + (a - c)
+      };
+    },
+    function (b) {
+      var a = randInt(Math.floor(b.maxVal * 0.5), b.maxVal);
+      var miss = randInt(100, a - 50);
+      var diff = a - miss;
+      return {
+        lo: 'LO-2', skill: 'sub',
+        title: 'रिकाम्या जागेतील संख्या शोधून वजाबाकी पूर्ण करा.',
+        body: '<p style="font-weight:700;">' + a + ' − [ ________ ] = ' + diff + '</p>',
+        ans: String(miss) + ' (' + a + ' − ' + diff + ')'
+      };
+    },
+    function (b) {
+      var a = randInt(Math.floor(b.maxVal * 0.4), b.maxVal);
+      var c = randInt(100, a - 50);
+      var diff = a - c;
+      return {
+        lo: 'LO-2', skill: 'sub',
+        title: 'वजाबाकी करा आणि बेरजेने उत्तर तपासा: ' + a + ' − ' + c,
+        body: '<div class="sgmathflnps_vmath_grid">' + verticalMathHtml(a, c, '−') + '</div><p>तपासणी: _____ + ' + c + ' = ' + a + '</p>',
+        ans: 'उत्तर = ' + diff + ' (तपासणी: ' + diff + ' + ' + c + ' = ' + a + ')'
+      };
+    },
+    function (b) {
+      var a = randInt(Math.floor(b.maxVal * 0.5), b.maxVal);
+      var c = randInt(100, a - 40);
+      var ans = a - c;
+      var opts = shuffle([ans, ans + 10, ans - 10]);
+      return {
+        lo: 'LO-2', skill: 'sub',
+        title: 'योग्य वजाबाकीचे उत्तर निवडा: ' + a + ' − ' + c + ' = ?',
+        body: '<p>(अ) ' + opts[0] + ' &nbsp;&nbsp;&nbsp; (ब) ' + opts[1] + ' &nbsp;&nbsp;&nbsp; (क) ' + opts[2] + '</p>',
+        ans: String(ans)
+      };
+    },
+    function (b) {
+      var a = randInt(12, 98), m = randInt(2, 9);
+      return {
+        lo: 'LO-2', skill: 'mul',
+        title: '2-अंकी संख्येला 1-अंकी संख्येने गुणा.',
+        body: '<div class="sgmathflnps_vmath_grid">' + verticalMathHtml(a, m, '×') + '</div>',
+        ans: a + ' × ' + m + ' = ' + (a * m)
+      };
+    },
+    function (b) {
+      var maxA = b.digits === 4 ? 999 : 330;
+      var m = randInt(2, b.digits === 4 ? 9 : 3);
+      var a = randInt(105, Math.min(maxA, Math.floor(b.maxVal / m)));
+      return {
+        lo: 'LO-2', skill: 'mul',
+        title: '3-अंकी संख्येला 1-अंकी संख्येने गुणा.',
+        body: '<div class="sgmathflnps_vmath_grid">' + verticalMathHtml(a, m, '×') + '</div>',
+        ans: a + ' × ' + m + ' = ' + (a * m)
+      };
+    },
+    function (b) {
+      var m = randInt(11, b.digits === 4 ? 29 : 19);
+      var a = randInt(12, Math.min(99, Math.floor(b.maxVal / m)));
+      return {
+        lo: 'LO-2', skill: 'mul',
+        title: '2-अंकी संख्येला 2-अंकी संख्येने गुणा.',
+        body: '<div class="sgmathflnps_vmath_grid">' + verticalMathHtml(a, m, '×') + '</div>',
+        ans: a + ' × ' + m + ' = ' + (a * m)
+      };
+    },
+    function (b) {
+      var m = b.digits === 4 ? randInt(11, 25) : randInt(2, 6);
+      var a = randInt(102, Math.floor(b.maxVal / m));
+      return {
+        lo: 'LO-2', skill: 'mul',
+        title: (b.digits === 4 ? '3-अंकी संख्येला 2-अंकी संख्येने गुणा.' : '3-अंकी संख्येचा गुणाकार करा.'),
+        body: '<div class="sgmathflnps_vmath_grid">' + verticalMathHtml(a, m, '×') + '</div>',
+        ans: a + ' × ' + m + ' = ' + (a * m)
+      };
+    },
+    function (b) {
+      var m = randInt(3, 9);
+      var x = randInt(12, Math.min(99, Math.floor(b.maxVal / m)));
+      var prod = x * m;
+      return {
+        lo: 'LO-2', skill: 'mul',
+        title: 'रिकाम्या जागेतील योग्य गुणाकार संख्या शोधा.',
+        body: '<p style="font-weight:700;">[ ________ ] × ' + m + ' = ' + prod + '</p>',
+        ans: String(x) + ' (' + prod + ' ÷ ' + m + ')'
+      };
+    },
+    function (b) {
+      var d = randInt(2, 9);
+      var q = randInt(4, 11);
+      var dividend = d * q;
+      return {
+        lo: 'LO-2', skill: 'div',
+        title: '2-अंकी संख्येचा 1-अंकी संख्येने पूर्ण भाग जाणारा भागाकार करा.',
+        body: '<p style="font-weight:700;">' + dividend + ' ÷ ' + d + ' = __________</p><div class="sgmathflnps_workbox"></div>',
+        ans: 'भागाकार = ' + q + ', बाकी = 0'
+      };
+    },
+    function (b) {
+      var d = randInt(3, 9);
+      var q = randInt(Math.ceil(100 / d), Math.floor(999 / d));
+      var dividend = d * q;
+      return {
+        lo: 'LO-2', skill: 'div',
+        title: '3-अंकी संख्येचा 1-अंकी संख्येने भागाकार करा.',
+        body: '<p style="font-weight:700;">' + dividend + ' ÷ ' + d + ' = __________</p><div class="sgmathflnps_workbox"></div>',
+        ans: 'भागाकार = ' + q + ', बाकी = 0'
+      };
+    },
+    function (b) {
+      var d = b.digits === 4 ? randInt(4, 15) : randInt(3, 9);
+      var minQ = b.digits === 4 ? Math.ceil(1000 / d) : Math.ceil(100 / d);
+      var maxQ = Math.floor((b.maxVal - d) / d);
+      var q = randInt(minQ, maxQ);
+      var rem = randInt(1, d - 1);
+      var dividend = d * q + rem;
+      return {
+        lo: 'LO-2', skill: 'div',
+        title: 'बाकी असलेला भागाकार सोडवा व भागाकार आणि बाकी लिहा.',
+        body: '<p style="font-weight:700;">' + dividend + ' ÷ ' + d + '</p><div class="sgmathflnps_workbox"></div><p>भागाकार = ________ &nbsp;&nbsp; बाकी = ________</p>',
+        ans: 'भागाकार = ' + q + ', बाकी = ' + rem
+      };
+    },
+    function (b) {
+      var d = randInt(3, 9);
+      var q = randInt(12, b.digits === 4 ? 120 : 80);
+      var dividend = d * q;
+      return {
+        lo: 'LO-2', skill: 'div',
+        title: 'गुणाकार आणि भागाकार संबंध: दिलेल्या गुणाकारावरून दोन भागाकार तयार करा.',
+        body: '<p style="font-weight:700;">जर ' + q + ' × ' + d + ' = ' + dividend + ', तर:</p>' +
+              '<p>1) ' + dividend + ' ÷ ' + d + ' = ________ &nbsp;&nbsp; 2) ' + dividend + ' ÷ ' + q + ' = ________</p>',
+        ans: '1) ' + q + ' | 2) ' + d
+      };
+    },
+    function (b) {
+      var a = randInt(20, 90), c = randInt(2, 9);
+      var mode = pick(['+', '−', '×']);
+      var res = mode === '+' ? a + c : (mode === '−' ? a - c : a * c);
+      return {
+        lo: 'LO-2', skill: 'add',
+        title: 'योग्य गणिती चिन्ह ( + , − , × , ÷ ) ओळखून चौकटीत लिहा.',
+        body: '<p style="font-weight:700;">' + a + ' [ &nbsp;&nbsp; ] ' + c + ' = ' + res + '</p>',
+        ans: mode
+      };
+    },
+    function (b) {
+      var a = randInt(b.min, Math.floor(b.maxVal * 0.5));
+      var c = randInt(110, b.maxVal - a);
+      var right = a + c;
+      var wrong = right - 10;
+      return {
+        lo: 'LO-2', skill: 'add',
+        title: 'चूक झालेले गणित शोधून दुरुस्त करा.',
+        body: '<p>एका विद्यार्थ्याने ' + a + ' + ' + c + ' = <strong>' + wrong + '</strong> असे सोडवले आहे. योग्य उत्तर काढा:</p><div class="sgmathflnps_workbox"></div>',
+        ans: 'योग्य उत्तर = ' + right + ' (विद्यार्थ्याचे उत्तर 10 ने कमी होते)'
+      };
+    }
+  ];
+
+  /* ---------------- 6. LO-3 Word Problem Generators (15 Distinct Types) ---------------- */
+  var LO3_GENS = [
+    function (b) {
+      var a = randInt(Math.floor(b.min * 0.5), Math.floor(b.maxVal * 0.45));
+      var c = randInt(Math.floor(b.min * 0.5), Math.floor(b.maxVal * 0.45));
+      return {
+        lo: 'LO-3', skill: 'word',
+        title: 'बेरीज आधारित शाब्दिक उदाहरण सोडवा.',
+        body: wordProblemTemplate('एका शाळेत ' + a + ' मुले आणि ' + c + ' मुली शिकतात. तर त्या शाळेत एकूण किती विद्यार्थी आहेत?'),
+        ans: a + ' + ' + c + ' = ' + (a + c) + ' विद्यार्थी'
+      };
+    },
+    function (b) {
+      var tot = randInt(Math.floor(b.maxVal * 0.5), b.maxVal);
+      var sold = randInt(Math.floor(b.min * 0.5), tot - 25);
+      return {
+        lo: 'LO-3', skill: 'word',
+        title: 'वजाबाकी आधारित शाब्दिक उदाहरण सोडवा.',
+        body: wordProblemTemplate('एका पुस्तक भांडारात एकूण ' + tot + ' पुस्तके होती. त्यापैकी ' + sold + ' पुस्तके विकली गेली. तर दुकानात किती पुस्तके शिल्लक राहिली?'),
+        ans: tot + ' − ' + sold + ' = ' + (tot - sold) + ' पुस्तके'
+      };
+    },
+    function (b) {
+      var boxes = randInt(4, b.digits === 4 ? 25 : 9);
+      var each = randInt(12, Math.min(95, Math.floor(b.maxVal / boxes)));
+      return {
+        lo: 'LO-3', skill: 'word',
+        title: 'गुणाकार आधारित शाब्दिक उदाहरण सोडवा.',
+        body: wordProblemTemplate('एका खोक्यात ' + each + ' पेन्सिली आहेत. अशा ' + boxes + ' खोक्यांत एकूण किती पेन्सिली असतील?'),
+        ans: each + ' × ' + boxes + ' = ' + (each * boxes) + ' पेन्सिली'
+      };
+    },
+    function (b) {
+      var kids = randInt(4, b.digits === 4 ? 15 : 9);
+      var each = randInt(12, Math.floor(b.maxVal / kids));
+      var total = kids * each;
+      return {
+        lo: 'LO-3', skill: 'word',
+        title: 'भागाकार आधारित शाब्दिक उदाहरण सोडवा (समान वाटप).',
+        body: wordProblemTemplate('शाळेत ' + total + ' वह्या ' + kids + ' विद्यार्थ्यांना समान वाटायच्या आहेत. तर प्रत्येक विद्यार्थ्याला किती वह्या मिळतील?'),
+        ans: total + ' ÷ ' + kids + ' = ' + each + ' वह्या'
+      };
+    },
+    function (b) {
+      var a = randInt(b.min, Math.floor(b.maxVal * 0.5));
+      var c = randInt(100, b.maxVal - a);
+      return {
+        lo: 'LO-3', skill: 'word',
+        title: 'शेतातील पिकांचे उत्पादन (बेरीज उदाहरण).',
+        body: wordProblemTemplate('एका शेतकऱ्याच्या शेतात पहिल्या वर्षी ' + a + ' किलो आणि दुसऱ्या वर्षी ' + c + ' किलो ज्वारी पिकली. तर दोन वर्षांत एकूण किती किलो ज्वारी पिकली?'),
+        ans: a + ' + ' + c + ' = ' + (a + c) + ' किलो'
+      };
+    },
+    function (b) {
+      var dist = randInt(Math.floor(b.maxVal * 0.5), b.maxVal);
+      var done = randInt(100, dist - 30);
+      return {
+        lo: 'LO-3', skill: 'word',
+        title: 'प्रवासातील अंतर (वजाबाकी उदाहरण).',
+        body: wordProblemTemplate('एका बसला एकूण ' + dist + ' किलोमीटर प्रवास करायचा आहे. बसने ' + done + ' किलोमीटर प्रवास पूर्ण केला. तर अजून किती किलोमीटर प्रवास शिल्लक आहे?'),
+        ans: dist + ' − ' + done + ' = ' + (dist - done) + ' किलोमीटर'
+      };
+    },
+    function (b) {
+      var save = randInt(Math.floor(b.maxVal * 0.45), b.maxVal);
+      var spend = randInt(100, save - 50);
+      return {
+        lo: 'LO-3', skill: 'word',
+        title: 'बचत आणि खर्च यावर आधारित उदाहरण.',
+        body: wordProblemTemplate('राजूकडे एकूण ₹ ' + save + ' बचत होती. त्यातून त्याने ₹ ' + spend + ' ची शाळेची बॅग व पुस्तके खरेदी केली. तर त्याच्याकडे किती रुपये शिल्लक राहिले?'),
+        ans: '₹ ' + save + ' − ₹ ' + spend + ' = ₹ ' + (save - spend)
+      };
+    },
+    function (b) {
+      var total = randInt(Math.floor(b.min * 0.8), Math.min(b.maxVal, 900));
+      var present = randInt(Math.floor(total * 0.6), total - 5);
+      return {
+        lo: 'LO-3', skill: 'word',
+        title: 'वर्गातील उपस्थिती (योग्य गणिती क्रिया निवडा व सोडवा).',
+        body: wordProblemTemplate('एका शाळेत एकूण ' + total + ' विद्यार्थी आहेत. आज ' + present + ' विद्यार्थी उपस्थित होते. तर आज किती विद्यार्थी गैरहजर होते?'),
+        ans: 'क्रिया: वजाबाकी (−) | ' + total + ' − ' + present + ' = ' + (total - present) + ' विद्यार्थी'
+      };
+    },
+    function (b) {
+      var a = randInt(100, Math.floor(b.maxVal * 0.35));
+      var c = randInt(100, Math.floor(b.maxVal * 0.35));
+      var d = randInt(50, a + c - 30);
+      return {
+        lo: 'LO-3', skill: 'word',
+        title: 'दोन टप्प्यांतील शाब्दिक उदाहरण (बेरीज व वजाबाकी).',
+        body: wordProblemTemplate('एका फळविक्रेत्याकडे ' + a + ' आंबे आणि ' + c + ' केळी होती. दिवसभरात त्याने एकूण ' + d + ' फळे विकली. तर त्याच्याकडे किती फळे शिल्लक राहिली?'),
+        ans: 'टप्पा 1: ' + a + ' + ' + c + ' = ' + (a + c) + ' | टप्पा 2: ' + (a + c) + ' − ' + d + ' = ' + (a + c - d) + ' फळे'
+      };
+    },
+    function (b) {
+      var cost = randInt(15, 65);
+      var qty = randInt(4, 12);
+      var paid = (Math.ceil((cost * qty) / 100) + 1) * 100;
+      if (paid > b.maxVal) paid = b.maxVal;
+      var bill = cost * qty;
+      return {
+        lo: 'LO-3', skill: 'word',
+        title: 'दोन टप्प्यांतील व्यवहार (गुणाकार व वजाबाकी).',
+        body: wordProblemTemplate('एका वहीची किंमत ₹ ' + cost + ' आहे. मीनाने अशा ' + qty + ' वह्या घेतल्या आणि दुकानदाराला ₹ ' + paid + ' दिले. तर दुकानदार तिला किती रुपये परत देईल?'),
+        ans: 'एकूण बिल: ' + cost + ' × ' + qty + ' = ₹ ' + bill + ' | परत मिळणारे पैसे: ' + paid + ' − ' + bill + ' = ₹ ' + (paid - bill)
+      };
+    },
+    function (b) {
+      var a = randInt(120, Math.floor(b.maxVal * 0.4));
+      var c = randInt(110, Math.floor(b.maxVal * 0.4));
+      var wrong = a + c - 15;
+      return {
+        lo: 'LO-3', skill: 'word',
+        title: 'चुकीचे उत्तर शोधून योग्य उत्तर लिहा.',
+        body: '<p><strong>प्रश्न:</strong> एका दुकानात सकाळी ' + a + ' रुपये व संध्याकाळी ' + c + ' रुपये विक्री झाली. एका विद्यार्थ्याने एकूण विक्री <strong>₹ ' + wrong + '</strong> काढली आहे. ती बरोबर आहे का? नसल्यास योग्य उत्तर काढा.</p><div class="sgmathflnps_workbox"></div>',
+        ans: 'विद्यार्थ्याचे उत्तर चुकीचे आहे. योग्य उत्तर: ' + a + ' + ' + c + ' = ₹ ' + (a + c)
+      };
+    },
+    function (b) {
+      var a = randInt(120, Math.floor(b.maxVal * 0.45));
+      var c = randInt(100, Math.floor(b.maxVal * 0.45));
+      return {
+        lo: 'LO-3', skill: 'word',
+        title: 'प्रश्नातील आवश्यक संख्या अधोरेखित करा व दिलेली माहिती लिहा.',
+        body: wordProblemTemplate('एका बागेत ' + a + ' गुलाबाची आणि ' + c + ' मोगऱ्याची रोपे लावली. त्या बागेत एकूण किती रोपे लावली?'),
+        ans: 'आवश्यक संख्या: ' + a + ', ' + c + ' | उत्तर: ' + (a + c) + ' रोपे'
+      };
+    },
+    function (b) {
+      var days = randInt(5, 12);
+      var perDay = randInt(15, Math.min(80, Math.floor(b.maxVal / days)));
+      return {
+        lo: 'LO-3', skill: 'word',
+        title: 'दैनंदिन व्यवहारावर आधारित गुणाकार उदाहरण.',
+        body: wordProblemTemplate('एक विद्यार्थी रोज ' + perDay + ' पाने वाचतो. तर तो ' + days + ' दिवसांत एकूण किती पाने वाचेल?'),
+        ans: perDay + ' × ' + days + ' = ' + (perDay * days) + ' पाने'
+      };
+    },
+    function (b) {
+      var a = randInt(120, Math.floor(b.maxVal * 0.5));
+      var c = randInt(50, a - 20);
+      return {
+        lo: 'LO-3', skill: 'word',
+        title: 'अपूर्ण शाब्दिक उदाहरण पूर्ण करा व सोडवा.',
+        body: '<p>एका गोदामात ' + a + ' पोती धान्य होते. त्यापैकी ' + c + ' पोती _________________________________ . तर गोदामात ______________________ ?</p><div class="sgmathflnps_workbox"></div>',
+        ans: 'नमुना उत्तर (वजाबाकी): ' + a + ' − ' + c + ' = ' + (a - c) + ' पोती शिल्लक.'
+      };
+    },
+    function (b) {
+      var a = randInt(120, Math.floor(b.maxVal * 0.45));
+      var c = randInt(100, Math.floor(b.maxVal * 0.45));
+      return {
+        lo: 'LO-3', skill: 'word',
+        title: 'दिलेल्या गणिती क्रियेवर स्वतःचे एक शाब्दिक उदाहरण तयार करा आणि सोडवा.',
+        body: '<p style="font-weight:700;">गणिती क्रिया: ' + a + ' + ' + c + '</p><p>तुमचे शाब्दिक उदाहरण:</p><div class="sgmathflnps_line"></div><div class="sgmathflnps_line"></div><p>उत्तर: ________________________</p>',
+        ans: 'विद्यार्थ्याचे स्वनिर्मित उदाहरण योग्य असल्याची खात्री करा. अंतिम उत्तर = ' + (a + c)
+      };
+    }
+  ];
+
+  /* ---------------- 7. LO-4 Daily Life Maths Generators (20 Distinct Types) ---------------- */
+  var LO4_GENS = [
+    function () {
+      var h = randInt(1, 11), m = pick([0, 15, 30, 45]);
+      var mStr = m < 10 ? '0' + m : String(m);
+      return {
+        lo: 'LO-4', skill: 'time',
+        title: 'घड्याळातील वेळ ओळखा आणि अंकात व शब्दांत लिहा.',
+        body: '<div style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;">' + svgClock(h, m) +
+          '<div><p>अंकात वेळ: ____ : ____</p><p>शब्दांत वेळ: ____________________________</p></div></div>',
+        ans: h + ':' + mStr + ' (' + h + ' वाजून ' + m + ' मिनिटे)'
+      };
+    },
+    function () {
+      var hrs = randInt(2, 6), extraM = pick([10, 15, 20, 30, 45]);
+      var tot = hrs * 60 + extraM;
+      return {
+        lo: 'LO-4', skill: 'time',
+        title: 'तास आणि मिनिटे यांचे मिनिटांत रूपांतर करा.',
+        body: '<p style="font-weight:700;">' + hrs + ' तास ' + extraM + ' मिनिटे = __________ मिनिटे</p><div class="sgmathflnps_line"></div>',
+        ans: '(' + hrs + ' × 60) + ' + extraM + ' = ' + tot + ' मिनिटे'
+      };
+    },
+    function () {
+      var sH = randInt(8, 10), durH = randInt(2, 4), durM = pick([15, 30, 45]);
+      var eH = sH + durH;
+      return {
+        lo: 'LO-4', skill: 'time',
+        title: 'सुरुवातीची व शेवटची वेळ वापरून कालावधी शोधा.',
+        body: '<p>शाळेची सहल सकाळी <strong>' + sH + ':00</strong> वाजता निघाली आणि दुपारी <strong>' + eH + ':' + durM + '</strong> वाजता परत आली. तर सहलीचा एकूण कालावधी किती होता?</p><div class="sgmathflnps_line"></div>',
+        ans: durH + ' तास ' + durM + ' मिनिटे'
+      };
+    },
+    function () {
+      var h12 = randInt(1, 9);
+      var h24 = h12 + 12;
+      return {
+        lo: 'LO-4', skill: 'time',
+        title: '12 तास आणि 24 तास घड्याळ पद्धतीचा सराव करा.',
+        body: '<p>1) दुपारी/संध्याकाळी <strong>' + h12 + ':30 PM</strong> म्हणजे 24 तास पद्धतीत किती वाजले? ____________</p>' +
+              '<p>2) 24 तास पद्धतीतील <strong>16:15</strong> म्हणजे 12 तास पद्धतीत किती वाजले? ____________</p>',
+        ans: '1) ' + h24 + ':30 | 2) 4:15 PM'
+      };
+    },
+    function () {
+      return {
+        lo: 'LO-4', skill: 'time',
+        title: 'शाळेचे वेळापत्रक वाचून प्रश्नांची उत्तरे लिहा.',
+        body: '<table class="sgmathflnps_table"><tr><th>तास</th><th>वेळ</th><th>विषय</th></tr>' +
+          '<tr><td>1 ला</td><td>10:00 ते 10:45</td><td>मराठी</td></tr>' +
+          '<tr><td>2 रा</td><td>10:45 ते 11:30</td><td>गणित</td></tr>' +
+          '<tr><td>3 रा</td><td>11:30 ते 12:15</td><td>विज्ञान</td></tr></table>' +
+          '<p>1) गणिताचा तास किती मिनिटांचा आहे? ________ &nbsp;&nbsp; 2) 11:30 वाजता कोणता विषय सुरू होतो? ________</p>',
+        ans: '1) 45 मिनिटे | 2) विज्ञान'
+      };
+    },
+    function () {
+      var n1 = pick([100, 200, 500]), n2 = pick([20, 50]), c1 = pick([5, 10]), c2 = pick([2, 5]);
+      var tot = n1 + n2 + c1 + c2;
+      return {
+        lo: 'LO-4', skill: 'money',
+        title: 'दिलेल्या नोटा आणि नाणी ओळखा व त्यांची एकूण बेरीज काढा.',
+        body: '<div>' + svgNote(n1) + svgNote(n2) + svgCoin(c1) + svgCoin(c2) + '</div><p>एकूण रक्कम = ₹ ____________</p>',
+        ans: n1 + ' + ' + n2 + ' + ' + c1 + ' + ' + c2 + ' = ₹ ' + tot
+      };
+    },
+    function () {
+      var p1 = randInt(45, 150), p2 = randInt(30, 120), p3 = randInt(20, 80);
+      var tot = p1 + p2 + p3;
+      return {
+        lo: 'LO-4', skill: 'money',
+        title: 'दुकानातील खरेदीची पावती (Bill) वाचा आणि एकूण रक्कम काढा.',
+        body: '<table class="sgmathflnps_table"><tr><th>वस्तू</th><th>किंमत (₹)</th></tr>' +
+          '<tr><td>वही संच</td><td>₹ ' + p1 + '</td></tr>' +
+          '<tr><td>कंपास पेटी</td><td>₹ ' + p2 + '</td></tr>' +
+          '<tr><td>पेन व पेन्सिल</td><td>₹ ' + p3 + '</td></tr>' +
+          '<tr><th>एकूण बिल</th><th>₹ ____________</th></tr></table>',
+        ans: '₹ ' + tot
+      };
+    },
+    function () {
+      var paid = pick([200, 500]);
+      var spent = randInt(75, paid - 25);
+      return {
+        lo: 'LO-4', skill: 'money',
+        title: 'दिलेल्या रकमेतून उरलेले पैसे काढा.',
+        body: '<p>आईने भाजी आणण्यासाठी ₹ <strong>' + paid + '</strong> दिले. भाजीची एकूण किंमत ₹ <strong>' + spent + '</strong> झाली. तर किती रुपये शिल्लक राहतील?</p><div class="sgmathflnps_line"></div>',
+        ans: paid + ' − ' + spent + ' = ₹ ' + (paid - spent)
+      };
+    },
+    function () {
+      var bag1 = randInt(250, 480), bag2 = randInt(250, 480);
+      if (bag1 === bag2) bag2 += 35;
+      var diff = Math.abs(bag1 - bag2);
+      var costlier = bag1 > bag2 ? 'पिशवी अ' : 'पिशवी ब';
+      return {
+        lo: 'LO-4', skill: 'money',
+        title: 'दोन वस्तूंच्या किमतींची तुलना करा.',
+        body: '<p>पिशवी अ ची किंमत <strong>₹ ' + bag1 + '</strong> आणि पिशवी ब ची किंमत <strong>₹ ' + bag2 + '</strong> आहे. कोणती पिशवी महाग आहे आणि कितीने?</p><div class="sgmathflnps_line"></div>',
+        ans: costlier + ' महाग आहे, ₹ ' + diff + ' ने जास्त.'
+      };
+    },
+    function () {
+      return {
+        lo: 'LO-4', skill: 'money',
+        title: 'ठराविक बजेटमध्ये वस्तू खरेदी करण्याचा सराव करा (बजेट: ₹ 100).',
+        body: '<p>वस्तूंचे दर: वही = ₹ 35, पेन = ₹ 20, चित्रकला वही = ₹ 45, खोडरबर = ₹ 10.</p>' +
+          '<p>तुमच्याकडे ₹ 100 आहेत. तुम्ही कोणत्या 3 वस्तू खरेदी कराल जेणेकरून बरोबर ₹ 100 खर्च होतील?</p><div class="sgmathflnps_line"></div>',
+        ans: 'वही (₹ 35) + चित्रकला वही (₹ 45) + पेन (₹ 20) = ₹ 100'
+      };
+    },
+    function () {
+      var cmVal = randInt(3, 9);
+      return {
+        lo: 'LO-4', skill: 'length',
+        title: 'मोजपट्टी (Ruler) पाहून पेन्सिलीची अचूक लांबी लिहा.',
+        body: svgRuler(cmVal) + '<p>पेन्सिलीची लांबी = ________ सेंटीमीटर (cm)</p>',
+        ans: cmVal + ' cm'
+      };
+    },
+    function () {
+      var m = randInt(2, 9), cm = randInt(10, 85);
+      return {
+        lo: 'LO-4', skill: 'length',
+        title: 'मीटर आणि सेंटीमीटर यांचे रूपांतर करा (1 m = 100 cm).',
+        body: '<p style="font-weight:700;">' + m + ' मीटर ' + cm + ' सेंटीमीटर = ____________ सेंटीमीटर</p><div class="sgmathflnps_line"></div>',
+        ans: (m * 100 + cm) + ' cm'
+      };
+    },
+    function () {
+      var km = randInt(2, 8), m = pick([250, 500, 750]);
+      return {
+        lo: 'LO-4', skill: 'length',
+        title: 'किलोमीटर आणि मीटर यांचे रूपांतर करा (1 km = 1000 m).',
+        body: '<p style="font-weight:700;">' + km + ' किलोमीटर ' + m + ' मीटर = ____________ मीटर</p><div class="sgmathflnps_line"></div>',
+        ans: (km * 1000 + m) + ' m'
+      };
+    },
+    function () {
+      var l1 = randInt(12, 45), l2 = randInt(10, 35);
+      return {
+        lo: 'LO-4', skill: 'length',
+        title: 'एकूण लांबी शोधा.',
+        body: '<p>एका लाल रिबिनीची लांबी <strong>' + l1 + ' cm</strong> आणि निळ्या रिबिनीची लांबी <strong>' + l2 + ' cm</strong> आहे. दोन्ही रिबिनींची एकूण लांबी किती?</p><div class="sgmathflnps_line"></div>',
+        ans: l1 + ' + ' + l2 + ' = ' + (l1 + l2) + ' cm'
+      };
+    },
+    function () {
+      var total = randInt(50, 120), cut = randInt(15, total - 10);
+      return {
+        lo: 'LO-4', skill: 'length',
+        title: 'उरलेली लांबी शोधा.',
+        body: '<p>एका दोरीची लांबी <strong>' + total + ' मीटर</strong> होती. त्यातून <strong>' + cut + ' मीटर</strong> दोरी कापून वापरली. तर किती मीटर दोरी शिल्लक राहिली?</p><div class="sgmathflnps_line"></div>',
+        ans: total + ' − ' + cut + ' = ' + (total - cut) + ' मीटर'
+      };
+    },
+    function () {
+      var v1 = randInt(15, 40), v2 = randInt(15, 40), v3 = randInt(15, 40), v4 = randInt(15, 40);
+      var tot = v1 + v2 + v3 + v4;
+      return {
+        lo: 'LO-4', skill: 'data',
+        title: 'तक्त्याचे वाचन करून एकूण विद्यार्थ्यांची बेरीज काढा.',
+        body: '<table class="sgmathflnps_table"><tr><th>इयत्ता</th><th>इयत्ता 5 वी</th><th>इयत्ता 6 वी</th><th>इयत्ता 7 वी</th><th>इयत्ता 8 वी</th></tr>' +
+          '<tr><td>उपस्थित विद्यार्थी</td><td>' + v1 + '</td><td>' + v2 + '</td><td>' + v3 + '</td><td>' + v4 + '</td></tr></table>' +
+          '<p>एकूण उपस्थित विद्यार्थी = ______________</p>',
+        ans: v1 + ' + ' + v2 + ' + ' + v3 + ' + ' + v4 + ' = ' + tot + ' विद्यार्थी'
+      };
+    },
+    function () {
+      var items = shuffle([
+        { k: 'क्रिकेट', v: 30 },
+        { k: 'कबड्डी', v: 24 },
+        { k: 'खो-खो', v: 18 },
+        { k: 'धावणे', v: 12 }
+      ]);
+      var maxItem = items.reduce(function (a, b) { return a.v > b.v ? a : b; });
+      var minItem = items.reduce(function (a, b) { return a.v < b.v ? a : b; });
+      return {
+        lo: 'LO-4', skill: 'data',
+        title: 'स्तंभालेख (Bar Graph) वाचून प्रश्नांची उत्तरे लिहा (विद्यार्थ्यांचे आवडते खेळ).',
+        body: svgBarGraph(items) +
+          '<p>1) सर्वाधिक आवडता खेळ कोणता? ____________ &nbsp;&nbsp; 2) सर्वात कमी आवडता खेळ कोणता? ____________</p>',
+        ans: '1) ' + maxItem.k + ' (' + maxItem.v + ') | 2) ' + minItem.k + ' (' + minItem.v + ')'
+      };
+    },
+    function () {
+      var a = randInt(2, 5), b = randInt(2, 5), c = randInt(2, 5);
+      var star = '★ ';
+      return {
+        lo: 'LO-4', skill: 'data',
+        title: 'चित्रालेख (Pictograph) वाचा आणि उत्तरे लिहा (प्रमाण: 1 ★ = 5 झाडे).',
+        body: '<table class="sgmathflnps_table"><tr><th>गाव</th><th>लावलेली झाडे (1 ★ = 5 झाडे)</th></tr>' +
+          '<tr><td>आंबा</td><td>' + star.repeat(a) + '</td></tr>' +
+          '<tr><td>कडुलिंब</td><td>' + star.repeat(b) + '</td></tr>' +
+          '<tr><td>वड</td><td>' + star.repeat(c) + '</td></tr></table>' +
+          '<p>1) आंब्याची किती झाडे लावली? ________ &nbsp;&nbsp; 2) एकूण किती झाडे लावली? ________</p>',
+        ans: '1) ' + (a * 5) + ' झाडे | 2) एकूण = ' + ((a + b + c) * 5) + ' झाडे'
+      };
+    },
+    function () {
+      var mon = randInt(20, 45), tue = randInt(20, 45), wed = randInt(20, 45);
+      var maxV = Math.max(mon, tue, wed);
+      var diff = maxV - Math.min(mon, tue, wed);
+      return {
+        lo: 'LO-4', skill: 'data',
+        title: 'ग्रंथालयातील पुस्तकांच्या वाटपाची माहिती वाचा व उत्तरे लिहा.',
+        body: '<table class="sgmathflnps_table"><tr><th>वार</th><th>सोमवार</th><th>मंगळवार</th><th>बुधवार</th></tr>' +
+          '<tr><td>दिलेली पुस्तके</td><td>' + mon + '</td><td>' + tue + '</td><td>' + wed + '</td></tr></table>' +
+          '<p>1) तीन दिवसांत एकूण किती पुस्तके दिली? ________ &nbsp;&nbsp; 2) सर्वाधिक व सर्वात कमी यांतील फरक किती? ________</p>',
+        ans: '1) ' + (mon + tue + wed) + ' पुस्तके | 2) फरक = ' + diff
+      };
+    },
+    function () {
+      var r1 = randInt(15, 35), r2 = randInt(15, 35), r3 = randInt(15, 35);
+      return {
+        lo: 'LO-4', skill: 'data',
+        title: 'दिलेल्या माहितीवरून प्रश्नांची उत्तरे लिहा (आवडती फळे).',
+        body: '<table class="sgmathflnps_table"><tr><th>फळ</th><th>आंबा</th><th>सफरचंद</th><th>केळी</th></tr>' +
+          '<tr><td>विद्यार्थी संख्या</td><td>' + r1 + '</td><td>' + r2 + '</td><td>' + r3 + '</td></tr></table>' +
+          '<p>आंबा आणि केळी आवडणारे मिळून एकूण किती विद्यार्थी आहेत? ______________</p>',
+        ans: r1 + ' + ' + r3 + ' = ' + (r1 + r3) + ' विद्यार्थी'
+      };
+    }
+  ];
+
+  var ALL_GENS = [].concat(LO1_GENS, LO2_GENS, LO3_GENS, LO4_GENS);
+
+  var LO_TITLES = {
+    'LO-1': 'LO-1: संख्या वाचन, लेखन आणि आकलन',
+    'LO-2': 'LO-2: बेरीज, वजाबाकी, गुणाकार आणि भागाकार',
+    'LO-3': 'LO-3: मूलभूत गणिती क्रियांवर आधारित शाब्दिक उदाहरणे',
+    'LO-4': 'LO-4: दैनंदिन जीवनातील गणिताचा वापर (वेळ, पैसा, लांबी, माहिती)'
+  };
+
+  var LEVEL_NAMES = {
+    prarambhik: 'प्रारंभिक स्तर',
+    sadhana: 'साधना स्तर',
+    pragati: 'प्रगती स्तर',
+    pravinya: 'प्रावीण्य स्तर'
+  };
+
+  /* ---------------- 8. DOM References ---------------- */
+  var elClass = document.getElementById('sgmathflnps_class');
+  var elLevel = document.getElementById('sgmathflnps_level');
+  var elType = document.getElementById('sgmathflnps_type');
+  var elLO = document.getElementById('sgmathflnps_lo');
+  var elSkill = document.getElementById('sgmathflnps_skill');
+  var elLOWrap = document.getElementById('sgmathflnps_lo_wrap');
+  var elSkillWrap = document.getElementById('sgmathflnps_skill_wrap');
+  var elSheetCount = document.getElementById('sgmathflnps_sheet_count');
+  var elActCount = document.getElementById('sgmathflnps_act_count');
+  var elStudent = document.getElementById('sgmathflnps_student');
+  var elSchool = document.getElementById('sgmathflnps_school');
+  var elDate = document.getElementById('sgmathflnps_date');
+  var elTeacher = document.getElementById('sgmathflnps_teacher');
+
+  var btnGenerate = document.getElementById('sgmathflnps_btn_generate');
+  var btnAnother = document.getElementById('sgmathflnps_btn_another');
+  var btnPrint = document.getElementById('sgmathflnps_btn_print');
+  var btnPdf = document.getElementById('sgmathflnps_btn_pdf');
+  var btnKey = document.getElementById('sgmathflnps_btn_key');
+  var btnReset = document.getElementById('sgmathflnps_btn_reset');
+  var btnGuide = document.getElementById('sgmathflnps_btn_guide');
+  var btnCloseGuide = document.getElementById('sgmathflnps_close_guide');
+  var btnPrintKey = document.getElementById('sgmathflnps_btn_print_key');
+  var btnCloseKey = document.getElementById('sgmathflnps_btn_close_key');
+
+  var elGuideBox = document.getElementById('sgmathflnps_guide_box');
+  var elStatus = document.getElementById('sgmathflnps_status');
+  var elOutputWrap = document.getElementById('sgmathflnps_output_wrap');
+  var elPreviewInfo = document.getElementById('sgmathflnps_preview_info');
+  var elContainer = document.getElementById('sgmathflnps_sheets_container');
+  var elKeyWrap = document.getElementById('sgmathflnps_key_wrap');
+  var elKeyContainer = document.getElementById('sgmathflnps_key_container');
+
+  function syncTypeUI() {
+    var t = elType.value;
+    if (t === 'single_lo') {
+      elLOWrap.classList.remove('sgmathflnps_hidden');
+      elSkillWrap.classList.add('sgmathflnps_hidden');
+    } else if (t === 'skill_focus') {
+      elLOWrap.classList.add('sgmathflnps_hidden');
+      elSkillWrap.classList.remove('sgmathflnps_hidden');
+    } else {
+      elLOWrap.classList.add('sgmathflnps_hidden');
+      elSkillWrap.classList.add('sgmathflnps_hidden');
+    }
+  }
+  elType.addEventListener('change', syncTypeUI);
+  syncTypeUI();
+
+  function selectGenerators(type, loKey, skillKey, count) {
+    var pool = [];
+    if (type === 'single_lo') {
+      if (loKey === 'LO-1') pool = LO1_GENS;
+      else if (loKey === 'LO-2') pool = LO2_GENS;
+      else if (loKey === 'LO-3') pool = LO3_GENS;
+      else pool = LO4_GENS;
+    } else if (type === 'skill_focus') {
+      pool = ALL_GENS.filter(function (fn) {
+        var sample = fn({ min: 150, max: 500, maxVal: 999, digits: 3 });
+        return sample.skill === skillKey;
+      });
+      if (!pool.length) pool = ALL_GENS;
+    } else if (type === 'all_lo') {
+      var each = Math.floor(count / 4);
+      var rem = count % 4;
+      var lists = [shuffle(LO1_GENS), shuffle(LO2_GENS), shuffle(LO3_GENS), shuffle(LO4_GENS)];
+      var chosen = [];
+      for (var i = 0; i < 4; i++) {
+        var take = each + (i < rem ? 1 : 0);
+        for (var j = 0; j < take; j++) {
+          chosen.push(lists[i][j % lists[i].length]);
+        }
+      }
+      return chosen;
+    } else {
+      pool = ALL_GENS;
+    }
+
+    var result = [];
+    var shuffled = shuffle(pool);
+    for (var k = 0; k < count; k++) {
+      if (k > 0 && k % shuffled.length === 0) shuffled = shuffle(pool);
+      result.push(shuffled[k % shuffled.length]);
+    }
+    return result;
+  }
+
+  function buildObservationTable(studentName, dateText) {
+    return (
+      '<div class="sgmathflnps_obs_box">' +
+        '<h3 class="sgmathflnps_obs_title">शिक्षक निरीक्षण आणि प्रगती नोंद</h3>' +
+        '<table class="sgmathflnps_table">' +
+          '<tr><th>कौशल्य</th><th style="text-align:center;">साध्य झाले नाही</th><th style="text-align:center;">प्रगतीपथावर</th><th style="text-align:center;">साध्य झाले</th></tr>' +
+          '<tr><td>संख्या ओळख व लेखन</td><td style="text-align:center;">□</td><td style="text-align:center;">□</td><td style="text-align:center;">□</td></tr>' +
+          '<tr><td>गणिती क्रिया</td><td style="text-align:center;">□</td><td style="text-align:center;">□</td><td style="text-align:center;">□</td></tr>' +
+          '<tr><td>शाब्दिक उदाहरणे</td><td style="text-align:center;">□</td><td style="text-align:center;">□</td><td style="text-align:center;">□</td></tr>' +
+          '<tr><td>दैनंदिन जीवनातील गणित</td><td style="text-align:center;">□</td><td style="text-align:center;">□</td><td style="text-align:center;">□</td></tr>' +
+        '</table>' +
+        '<p style="margin:8px 0 4px 0;"><strong>शिक्षकाचे टिपण व पुढील सरावासाठी सूचना:</strong></p>' +
+        '<div class="sgmathflnps_line"></div><div class="sgmathflnps_line"></div>' +
+        '<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-top:14px;font-weight:700;">' +
+          '<span>विद्यार्थ्याचे नाव: ' + studentName + '</span>' +
+          '<span>दिनांक: ' + dateText + '</span>' +
+          '<span>शिक्षकाची स्वाक्षरी: _________________</span>' +
+        '</div>' +
+      '</div>'
+    );
+  }
+
+  /* ---------------- 9. Generate Worksheets & Synchronized Answer Key ---------------- */
+  function generatePracticeSheets() {
+    var cls = elClass.value;
+    var level = elLevel.value;
+    var type = elType.value;
+    var loKey = elLO.value;
+    var skillKey = elSkill.value;
+    var sheetCount = parseInt(elSheetCount.value, 10) || 1;
+    var actCount = parseInt(elActCount.value, 10) || 10;
+
+    var bounds = getBounds(cls, level);
+    var studentName = esc(elStudent.value.trim()) || '__________________________';
+    var schoolName = esc(elSchool.value.trim()) || '____________________________________';
+    var dateText = formatDateDisplay(elDate.value);
+    var teacherName = esc(elTeacher.value.trim()) || '_______________________';
+
+    var loBannerText = '';
+    if (type === 'single_lo') loBannerText = LO_TITLES[loKey];
+    else if (type === 'all_lo') loBannerText = 'सर्व LO-1 ते LO-4 एकत्रित सरावपत्रिका';
+    else if (type === 'skill_focus') loBannerText = 'निवडक कौशल्य: ' + elSkill.options[elSkill.selectedIndex].text;
+    else loBannerText = 'मिश्र सरावपत्रिका (LO-1 ते LO-4)';
+
+    var sheetsHtml = '';
+    var keysHtml = '';
+
+    for (var s = 1; s <= sheetCount; s++) {
+      var gens = selectGenerators(type, loKey, skillKey, actCount);
+      var actsHtml = '';
+      var keyRows = '';
+
+      for (var i = 0; i < gens.length; i++) {
+        var item = gens[i](bounds);
+        actsHtml +=
+          '<div class="sgmathflnps_act_card">' +
+            '<h4 class="sgmathflnps_act_title"><span class="sgmathflnps_lo_tag">' + item.lo + '</span>कृती ' + (i + 1) + ': ' + item.title + '</h4>' +
+            '<div>' + item.body + '</div>' +
+          '</div>';
+
+        keyRows +=
+          '<div class="sgmathflnps_key_item">' +
+            '<strong>कृती ' + (i + 1) + ' (' + item.lo + '):</strong> ' + item.ans +
+          '</div>';
+      }
+
+      sheetsHtml +=
+        '<article class="sgmathflnps_sheet">' +
+          '<div class="sgmathflnps_watermark">SmartGuruji</div>' +
+          '<div class="sgmathflnps_sheet_inner">' +
+            '<div class="sgmathflnps_sheet_top">' +
+              '<div class="sgmathflnps_brand_left">SmartGuruji – FLN Maths Practice Sheet 2026-27</div>' +
+              '<div class="sgmathflnps_sheet_num">सरावपत्रिका क्रमांक: ' + s + ' / ' + sheetCount + '</div>' +
+            '</div>' +
+
+            '<table class="sgmathflnps_meta_table">' +
+              '<tr>' +
+                '<td><strong>इयत्ता:</strong> ' + cls + '</td>' +
+                '<td><strong>विषय:</strong> गणित</td>' +
+                '<td><strong>अध्ययन स्तर:</strong> ' + LEVEL_NAMES[level] + '</td>' +
+              '</tr>' +
+              '<tr>' +
+                '<td colspan="2"><strong>विद्यार्थ्याचे नाव:</strong> ' + studentName + '</td>' +
+                '<td><strong>दिनांक:</strong> ' + dateText + '</td>' +
+              '</tr>' +
+              '<tr>' +
+                '<td colspan="2"><strong>शाळेचे नाव:</strong> ' + schoolName + '</td>' +
+                '<td><strong>शिक्षकाचे नाव:</strong> ' + teacherName + '</td>' +
+              '</tr>' +
+            '</table>' +
+
+            '<div class="sgmathflnps_lo_banner">' +
+              '<strong>अध्ययन निष्पत्ती:</strong> ' + loBannerText + ' &nbsp;|&nbsp; <strong>संख्या मर्यादा:</strong> ' + (bounds.digits === 3 ? '3-अंकी (999 पर्यंत)' : '4-अंकी (9999 पर्यंत)') +
+            '</div>' +
+
+            '<div class="sgmathflnps_instructions">' +
+              '<strong>सूचना:</strong> सर्व कृती शांतपणे वाचून दिलेल्या जागेत स्वच्छ व अचूक सोडवा. गणिती चिन्हे (+, −, ×, ÷, =) व एकके योग्य प्रकारे लिहा.' +
+            '</div>' +
+
+            actsHtml +
+
+            buildObservationTable(studentName, dateText) +
+
+            '<div class="sgmathflnps_sheet_footer">' +
+              '<span>Prepared for Teachers and Students | SmartGuruji</span>' +
+              '<span>इयत्ता ' + cls + ' | ' + LEVEL_NAMES[level] + ' | सरावपत्रिका ' + s + '</span>' +
+            '</div>' +
+          '</div>' +
+        '</article>';
+
+      keysHtml +=
+        '<article class="sgmathflnps_key_sheet">' +
+          '<h3 style="margin:0 0 10px 0;border-bottom:2px solid #0f766e;padding-bottom:6px;color:#0f766e;">उत्तरसूची – सरावपत्रिका ' + s + ' (इयत्ता ' + cls + ' | ' + LEVEL_NAMES[level] + ' | ' + loBannerText + ')</h3>' +
+          keyRows +
+        '</article>';
+    }
+
+    elContainer.innerHTML = sheetsHtml;
+    elKeyContainer.innerHTML = keysHtml;
+    elOutputWrap.classList.remove('sgmathflnps_hidden');
+    elKeyWrap.classList.add('sgmathflnps_hidden');
+
+    elPreviewInfo.textContent = 'तयार: इयत्ता ' + cls + ' | ' + LEVEL_NAMES[level] + ' | ' + sheetCount + ' सरावपत्रिका (' + actCount + ' कृती)';
+    elStatus.textContent = 'सरावपत्रिका यशस्वीरित्या तयार झाली आहे. शिक्षकांसाठी स्वतंत्र उत्तरसूची "Teacher Answer Key" बटणावर उपलब्ध आहे.';
+
+    btnAnother.disabled = false;
+    btnPrint.disabled = false;
+    btnPdf.disabled = false;
+    btnKey.disabled = false;
+
+    elOutputWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  /* ---------------- 10. Clean A4 Isolated Print / Save as PDF ---------------- */
+  function printHtmlContent(htmlContent, docTitle, isPdf) {
+    if (!htmlContent.trim()) return;
+    var printCss =
+      '@page { size: A4 portrait; margin: 12mm; }' +
+      'body { font-family: "Noto Sans Devanagari", "Mukta", "Segoe UI", sans-serif; color: #111; margin: 0; padding: 0; font-size: 11.5pt; line-height: 1.48; background: #fff; }' +
+      '* { box-sizing: border-box; }' +
+      '.sgmathflnps_sheet, .sgmathflnps_key_sheet { position: relative; border: 1.4pt solid #111; border-radius: 6px; padding: 12px 14px; margin-bottom: 14px; page-break-after: always; break-after: page; overflow: hidden; }' +
+      '.sgmathflnps_sheet:last-child, .sgmathflnps_key_sheet:last-child { page-break-after: auto; break-after: auto; }' +
+      '.sgmathflnps_watermark { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-32deg); font-size: 62pt; font-weight: 900; color: rgba(0, 0, 0, 0.045); z-index: 0; pointer-events: none; white-space: nowrap; }' +
+      '.sgmathflnps_sheet_inner { position: relative; z-index: 1; }' +
+      '.sgmathflnps_sheet_top { display: flex; justify-content: space-between; align-items: center; border-bottom: 1.6pt solid #111; padding-bottom: 5px; margin-bottom: 8px; }' +
+      '.sgmathflnps_brand_left { font-size: 12pt; font-weight: 800; }' +
+      '.sgmathflnps_sheet_num { font-size: 10pt; font-weight: 700; border: 1pt solid #333; padding: 2px 8px; border-radius: 4px; }' +
+      '.sgmathflnps_meta_table, .sgmathflnps_table { width: 100%; border-collapse: collapse; margin: 6px 0 8px 0; font-size: 10.5pt; }' +
+      '.sgmathflnps_meta_table td, .sgmathflnps_table th, .sgmathflnps_table td { border: 1pt solid #333; padding: 4px 7px; text-align: left; }' +
+      '.sgmathflnps_table th { background: #f1f5f9; }' +
+      '.sgmathflnps_lo_banner { border: 1pt solid #333; padding: 5px 9px; border-radius: 4px; margin-bottom: 7px; font-size: 10.5pt; background: #f8fafc; }' +
+      '.sgmathflnps_instructions { border: 1pt dashed #555; padding: 5px 9px; border-radius: 4px; margin-bottom: 9px; font-size: 10pt; }' +
+      '.sgmathflnps_act_card { border: 1pt solid #999; border-radius: 5px; padding: 8px 10px; margin-bottom: 9px; page-break-inside: avoid; break-inside: avoid; }' +
+      '.sgmathflnps_act_title { font-size: 11.2pt; font-weight: 800; margin: 0 0 6px 0; }' +
+      '.sgmathflnps_lo_tag { display: inline-block; border: 1pt solid #333; border-radius: 4px; padding: 0 6px; font-size: 9.5pt; margin-right: 6px; }' +
+      '.sgmathflnps_vmath_grid { display: flex; flex-wrap: wrap; gap: 18px; margin: 6px 0; }' +
+      '.sgmathflnps_vmath { display: inline-block; min-width: 120px; border: 1pt solid #444; border-radius: 4px; padding: 7px 10px; font-family: "Courier New", monospace; font-size: 12pt; font-weight: 700; text-align: right; }' +
+      '.sgmathflnps_vmath_line { border-top: 1.5pt solid #111; margin-top: 5px; padding-top: 22px; }' +
+      '.sgmathflnps_wp_steps { border: 1pt dashed #666; border-radius: 4px; padding: 7px 9px; margin-top: 6px; font-size: 10.2pt; }' +
+      '.sgmathflnps_wp_row { margin: 5px 0; }' +
+      '.sgmathflnps_workbox { border: 1pt solid #444; border-radius: 4px; min-height: 64px; margin: 4px 0; }' +
+      '.sgmathflnps_line { border-bottom: 1pt dotted #444; height: 24px; width: 100%; }' +
+      '.sgmathflnps_chip_row { display: flex; flex-wrap: wrap; gap: 8px; margin: 5px 0; }' +
+      '.sgmathflnps_chip { border: 1pt solid #333; border-radius: 4px; padding: 2px 8px; font-weight: 700; }' +
+      '.sgmathflnps_obs_box { border: 1.4pt solid #111; border-radius: 5px; padding: 9px 11px; margin-top: 12px; page-break-inside: avoid; break-inside: avoid; }' +
+      '.sgmathflnps_obs_title { margin: 0 0 6px 0; font-size: 11.2pt; font-weight: 800; }' +
+      '.sgmathflnps_key_item { border-bottom: 1pt dashed #999; padding: 5px 0; font-size: 10.8pt; }' +
+      '.sgmathflnps_sheet_footer { margin-top: 10px; padding-top: 5px; border-top: 1pt solid #666; display: flex; justify-content: space-between; font-size: 9pt; }';
+
+    var iframe = document.createElement('iframe');
+    iframe.style.position = 'fixed';
+    iframe.style.right = '0';
+    iframe.style.bottom = '0';
+    iframe.style.width = '0';
+    iframe.style.height = '0';
+    iframe.style.border = '0';
+    document.body.appendChild(iframe);
+
+    var doc = iframe.contentWindow.document;
+    doc.open();
+    doc.write('<!DOCTYPE html><html lang="mr"><head><meta charset="UTF-8"><title>' + docTitle + '</title><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;600;700;800&display=swap" rel="stylesheet"><style>' + printCss + '</style></head><body>' + htmlContent + '</body></html>');
+    doc.close();
+
+    if (isPdf) {
+      elStatus.textContent = 'PDF जतन करण्यासाठी उघडलेल्या Print विंडोमध्ये Destination मध्ये "Save as PDF" निवडा.';
+    }
+
+    setTimeout(function () {
+      iframe.contentWindow.focus();
+      iframe.contentWindow.print();
+      setTimeout(function () {
+        if (iframe.parentNode) iframe.parentNode.removeChild(iframe);
+      }, 1500);
+    }, 350);
+  }
+
+  /* ---------------- 11. Event Listeners ---------------- */
+  btnGenerate.addEventListener('click', generatePracticeSheets);
+  btnAnother.addEventListener('click', generatePracticeSheets);
+  btnPrint.addEventListener('click', function () {
+    printHtmlContent(elContainer.innerHTML, 'SmartGuruji FLN Maths Practice Sheet', false);
+  });
+  btnPdf.addEventListener('click', function () {
+    printHtmlContent(elContainer.innerHTML, 'SmartGuruji FLN Maths Practice Sheet', true);
+  });
+  btnKey.addEventListener('click', function () {
+    elKeyWrap.classList.toggle('sgmathflnps_hidden');
+    if (!elKeyWrap.classList.contains('sgmathflnps_hidden')) {
+      elKeyWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+  btnPrintKey.addEventListener('click', function () {
+    printHtmlContent(elKeyContainer.innerHTML, 'SmartGuruji FLN Maths Teacher Answer Key', true);
+  });
+  btnCloseKey.addEventListener('click', function () {
+    elKeyWrap.classList.add('sgmathflnps_hidden');
+  });
+  btnGuide.addEventListener('click', function () {
+    elGuideBox.classList.toggle('sgmathflnps_hidden');
+  });
+  btnCloseGuide.addEventListener('click', function () {
+    elGuideBox.classList.add('sgmathflnps_hidden');
+  });
+  btnReset.addEventListener('click', function () {
+    elClass.value = '8';
+    elLevel.value = 'sadhana';
+    elType.value = 'single_lo';
+    elLO.value = 'LO-1';
+    elSheetCount.value = '1';
+    elActCount.value = '10';
+    elStudent.value = '';
+    elSchool.value = '';
+    elDate.value = '';
+    elTeacher.value = '';
+    syncTypeUI();
+    elContainer.innerHTML = '';
+    elKeyContainer.innerHTML = '';
+    elOutputWrap.classList.add('sgmathflnps_hidden');
+    elKeyWrap.classList.add('sgmathflnps_hidden');
+    elStatus.textContent = 'सर्व पर्याय रीसेट केले आहेत.';
+    btnAnother.disabled = true;
+    btnPrint.disabled = true;
+    btnPdf.disabled = true;
+    btnKey.disabled = true;
+  });
+})();
+</script>
